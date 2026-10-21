@@ -52,6 +52,7 @@ delete_option( 'lucidlab_dbc_stop' );
 delete_option( 'lucidlab_dbc_last_mail' );
 delete_option( 'lucidlab_dbc_version' );
 delete_metadata( 'user', 0, 'lucidlab_dbc_pro_dismissed', '', true );
+delete_metadata( 'user', 0, 'lucidlab_dbc_hide_pro_inactive_notice', '', true );
 delete_option( 'lucidlab_dbc_full_job' );
 delete_option( 'lucidlab_dbc_full_restore' );
 

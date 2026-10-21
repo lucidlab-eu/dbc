@@ -25,7 +25,10 @@ Documentation: https://lucidlab.eu/database-cleaner/documentation/
 
 See [readme.txt](readme.txt).
 
-### 1.5.2
+### 1.5.3
 
-- Settings link on the Plugins page: it opens the Settings tab of Database Cleaner (administrators only) and replaces the former Open link.
-- The page header shows the edition and version like Media & Products Cleanup: "v1.5.2 Free · Documentation", or "v1.5.2 Free & v1.0.7 Pro · Documentation" when the Pro add-on is active.
+Released 21 October 2026.
+
+- The browser tab title of the Database Cleaner screens is now "Database Cleaner" (was "Lucid Lab Database Cleaner"). The menu label and the page heading are unchanged.
+- New: when Database Cleaner Pro is installed but not activated, the Database Cleaner screens show a notice to users who can activate plugins, with an "Activate Pro" button and a "Hide this message" link (remembered per user), like Media & Products Cleanup.
+- Fixed: "Get Pro" buttons and other links that open in a new tab or go to another site no longer show a spinner or become disabled when clicked; they open lucidlab.eu in a new tab and stay usable. Other buttons keep their busy state.

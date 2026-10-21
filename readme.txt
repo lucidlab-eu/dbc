@@ -4,7 +4,7 @@ Tags: database, cleanup, optimize, woocommerce, orphaned data
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.5.2
+Stable tag: 1.5.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -135,6 +135,12 @@ Nothing else in the free plugin connects to an external service: scans, cleanups
 The JavaScript and CSS are shipped unminified and are the editable sources: assets/js/admin.js and assets/css/admin.css. No build step or bundler is needed.
 
 == Changelog ==
+
+= 1.5.3 =
+Released 21 October 2026.
+* The browser tab title of the Database Cleaner screens is now "Database Cleaner" (was "Lucid Lab Database Cleaner"). The menu label and the page heading are unchanged.
+* New: when Database Cleaner Pro is installed but not activated, the Database Cleaner screens show a notice to users who can activate plugins, with an "Activate Pro" button and a "Hide this message" link (remembered per user), like Media & Products Cleanup.
+* Fixed: "Get Pro" buttons and other links that open in a new tab or go to another site no longer show a spinner or become disabled when clicked; they open lucidlab.eu in a new tab and stay usable. Other buttons keep their busy state.
 
 = 1.5.2 =
 * Settings link on the Plugins page: it opens the Settings tab of Database Cleaner (administrators only) and replaces the former Open link.
