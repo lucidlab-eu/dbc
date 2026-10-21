@@ -1,0 +1,1324 @@
+/* Lucid Lab Database Cleaner admin styles (same design language as Lucid Lab Media & Products Cleanup). */
+
+/*
+ * no-descending-specificity is disabled for this file. Each reported pair is a more specific
+ * component rule followed by a less specific one (sidebar tabs vs. group filter tabs, base table vs.
+ * compact/compare/findings tables). Where both match an element, the more specific rule wins
+ * whatever the source order, so reordering would not change the rendering, only the file layout.
+ */
+/* stylelint-disable no-descending-specificity */
+.lucidlab-dbc-wrap {
+	--dbc-ink: #0f2a3a;
+	--dbc-ink-2: #50606e;
+	--dbc-muted: #646970;
+	--dbc-line: #e2e8ee;
+	--dbc-bg: #f6f8fa;
+	--dbc-surface: #fff;
+}
+
+.lucidlab-dbc-wrap
+	:where(button, .button, a, input, select, textarea):focus-visible {
+	outline: 2px solid #2271b1;
+	outline-offset: 2px;
+}
+
+.lucidlab-dbc-wrap .button .dashicons {
+	vertical-align: text-bottom;
+	font-size: 17px;
+	width: 17px;
+	height: 17px;
+}
+
+/* Header */
+.lucidlab-dbc-admin-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	gap: 24px;
+	flex-wrap: wrap;
+	padding: 8px 0 14px;
+}
+
+.lucidlab-dbc-admin-title {
+	display: flex;
+	gap: 18px;
+	align-items: flex-start;
+}
+
+.lucidlab-dbc-admin-logo {
+	width: 52px;
+	height: 52px;
+	flex: none;
+	display: block;
+}
+
+.lucidlab-dbc-admin-title-text {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	min-width: 0;
+}
+
+.lucidlab-dbc-title {
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
+	gap: 0 0.35em;
+	margin: 0;
+	padding: 0;
+	font-size: 30px;
+	line-height: 1.1;
+	letter-spacing: -0.03em;
+	font-weight: 800;
+	color: #0f2a3a;
+}
+
+.lucidlab-dbc-wrap h1.lucidlab-dbc-title {
+	padding: 0;
+	margin: 0;
+}
+
+.lucidlab-dbc-title-brand {
+	color: #2271b1;
+}
+
+.lucidlab-dbc-title-name {
+	color: #0f2a3a;
+}
+
+.lucidlab-dbc-ver {
+	margin: 0;
+	font-size: 12px;
+	line-height: 1.4;
+	font-weight: 600;
+	color: #646970;
+	letter-spacing: 0.02em;
+}
+
+/* Layout: sidebar navigation card + content */
+.lucidlab-dbc-admin-body {
+	display: grid;
+	grid-template-columns: 220px minmax(0, 1fr);
+	gap: 20px;
+	align-items: start;
+	margin-top: 0;
+}
+
+.lucidlab-dbc-admin-content {
+	min-width: 0;
+}
+
+.lucidlab-dbc-nav-card.lucidlab-dbc-card {
+	gap: 0;
+	padding: 8px 0;
+	position: static;
+	align-self: start;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-tabs-sidebar {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-tabs-sidebar .nav-tab,
+.lucidlab-dbc-wrap .lucidlab-dbc-tabs-sidebar .nav-tab:focus,
+.lucidlab-dbc-wrap .lucidlab-dbc-tabs-sidebar .nav-tab-active {
+	float: none !important;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	box-sizing: border-box;
+	width: 100%;
+	height: auto;
+	margin: 0 !important;
+	padding: 11px 16px !important;
+	border: 0 !important;
+	border-bottom: 1px solid #dcdcde !important;
+	border-radius: 0 !important;
+	background: transparent !important;
+	color: #50606e !important;
+	font-size: 13px !important;
+	line-height: 1.35 !important;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	white-space: normal;
+	box-shadow: none !important;
+	text-decoration: none;
+	transition:
+		background 0.15s ease,
+		color 0.15s ease;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-tabs-sidebar .nav-tab:last-child {
+	border-bottom: 0 !important;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-tabs-sidebar .lucidlab-dbc-nav-heading {
+	display: block;
+	padding: 14px 16px 6px;
+	border-bottom: 1px solid #dcdcde;
+	color: #2271b1; /* Lucid Lab brand blue (icon, MPC eyebrows); 5.4:1 on white. */
+	font-size: 10.5px;
+	line-height: 1.4;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-tabs-sidebar .lucidlab-dbc-nav-heading:first-child {
+	padding-top: 6px;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-tabs-sidebar .nav-tab:hover {
+	background: #f3f8fc !important;
+	color: #135e96 !important;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-tabs-sidebar .nav-tab-active,
+.lucidlab-dbc-wrap .lucidlab-dbc-tabs-sidebar .nav-tab-active:hover {
+	background: #e8f2fb !important;
+	color: #135e96 !important;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-tab-badge {
+	display: inline-block;
+	margin: 0;
+	padding: 1px 7px;
+	border-radius: 999px;
+	background: #eaf2fa;
+	color: #135e96;
+	font-size: 10.5px;
+	line-height: 1.5;
+	font-weight: 700;
+	flex: none;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-tab-badges {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	flex: none;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-tab-badges .lucidlab-dbc-pro-badge {
+	margin: 0;
+}
+
+.lucidlab-dbc-wrap
+	.lucidlab-dbc-tabs-sidebar
+	.nav-tab-active
+	.lucidlab-dbc-tab-badge {
+	background: #2271b1;
+	color: #fff;
+}
+
+@media (max-width: 1100px) {
+
+	.lucidlab-dbc-admin-body {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 14px;
+	}
+
+	.lucidlab-dbc-nav-card.lucidlab-dbc-card {
+		padding: 6px 0;
+	}
+
+	.lucidlab-dbc-wrap .lucidlab-dbc-tabs-sidebar {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	}
+
+	.lucidlab-dbc-wrap .lucidlab-dbc-tabs-sidebar .nav-tab,
+	.lucidlab-dbc-wrap .lucidlab-dbc-tabs-sidebar .nav-tab-active {
+		border-bottom: 1px solid #dcdcde !important;
+		padding: 10px 14px !important;
+	}
+
+	.lucidlab-dbc-wrap .lucidlab-dbc-tabs-sidebar .lucidlab-dbc-nav-heading {
+		grid-column: 1 / -1;
+		padding: 10px 14px 4px;
+	}
+}
+
+/* Panel + hero */
+.lucidlab-dbc-panel.lucidlab-dbc-panel-cards {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 18px;
+	background: var(--dbc-bg);
+	border: 1px solid var(--dbc-line);
+	border-radius: 16px;
+	color: var(--dbc-ink);
+}
+
+.lucidlab-dbc-page-hero {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 18px;
+	margin: -18px -18px 0;
+	padding: 18px 26px;
+	background: linear-gradient(120deg, #102a43, #1769aa 58%, #51a8d8);
+	color: #fff;
+	border-radius: 16px 16px 0 0;
+}
+
+.lucidlab-dbc-kicker {
+	display: block;
+	margin-bottom: 2px;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: #a9defa;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-page-hero h2 {
+	font-size: 22px;
+	line-height: 1.2;
+	margin: 0 0 6px;
+	color: #fff;
+	letter-spacing: -0.02em;
+}
+
+.lucidlab-dbc-page-hero p {
+	max-width: 720px;
+	font-size: 13.5px;
+	line-height: 1.5;
+	margin: 0;
+	color: #eaf5ff;
+}
+
+.lucidlab-dbc-hero-icon {
+	width: 72px;
+	height: 72px;
+	min-width: 72px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.18);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+
+.lucidlab-dbc-hero-logo {
+	width: 48px;
+	height: 48px;
+	display: block;
+	object-fit: contain;
+	filter: drop-shadow(0 8px 18px rgba(16, 42, 67, 0.28));
+}
+
+@media (max-width: 782px) {
+
+	.lucidlab-dbc-page-hero {
+		margin: -12px -12px 0;
+		padding: 16px 18px;
+	}
+
+	.lucidlab-dbc-wrap .lucidlab-dbc-page-hero h2 {
+		font-size: 19px;
+	}
+
+	.lucidlab-dbc-hero-icon {
+		display: none;
+	}
+}
+
+/* Cards */
+.lucidlab-dbc-card {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	padding: 26px;
+	border-radius: 18px;
+	background: var(--dbc-surface, #fff);
+	border: 1px solid var(--dbc-line, #e2e8ee);
+	box-shadow:
+		0 1px 2px rgba(15, 42, 58, 0.04),
+		0 12px 30px -16px rgba(15, 42, 58, 0.14);
+	min-width: 0;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+.lucidlab-dbc-card-head {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-card-title {
+	margin: 0;
+	font-size: 19px;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	color: var(--dbc-ink);
+	line-height: 1.2;
+}
+
+.lucidlab-dbc-card-lede {
+	margin: 0;
+	max-width: 80ch;
+	font-size: 14px;
+	line-height: 1.6;
+	color: var(--dbc-ink-2);
+}
+
+.lucidlab-dbc-hint {
+	margin: 4px 0 0;
+	color: var(--dbc-muted);
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+.lucidlab-dbc-btn-row,
+.lucidlab-dbc-controls {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	align-items: center;
+	margin: 0;
+}
+
+.lucidlab-dbc-btn-row .lucidlab-dbc-hint {
+	margin: 0;
+}
+
+/* Stats */
+.lucidlab-dbc-stats {
+	display: flex;
+	gap: 16px;
+	flex-wrap: wrap;
+	margin: 0;
+}
+
+.lucidlab-dbc-stat {
+	flex: 1;
+	min-width: 150px;
+	background: linear-gradient(180deg, #eaf2fa, #f5f9fd);
+	border: 1px solid #d6e6f5;
+	border-radius: 14px;
+	padding: 16px;
+	text-align: center;
+}
+
+.lucidlab-dbc-num {
+	display: block;
+	font-size: 24px;
+	font-weight: 700;
+	color: #0b66c3;
+	line-height: 1.2;
+}
+
+.lucidlab-dbc-lbl {
+	display: block;
+	font-size: 12px;
+	color: #646970;
+	margin-top: 4px;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+}
+
+/* Group pills */
+.lucidlab-dbc-db-tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.lucidlab-dbc-db-tabs .nav-tab,
+.lucidlab-dbc-db-tabs .nav-tab:focus {
+	float: none !important;
+	cursor: pointer;
+	font: inherit;
+	font-size: 13px;
+	font-weight: 600;
+	height: auto;
+	margin: 0 !important;
+	padding: 8px 12px !important;
+	border: 1px solid var(--dbc-line) !important;
+	border-radius: 10px !important;
+	background: var(--dbc-bg) !important;
+	color: var(--dbc-ink-2) !important;
+	box-shadow: none !important;
+	line-height: 1.3 !important;
+}
+
+.lucidlab-dbc-db-tabs .nav-tab:hover {
+	background: #eaf2fa !important;
+	color: #135e96 !important;
+}
+
+.lucidlab-dbc-db-tabs .nav-tab-active,
+.lucidlab-dbc-db-tabs .nav-tab-active:hover,
+.lucidlab-dbc-db-tabs .nav-tab-active:focus {
+	background: #eaf2fa !important;
+	border-color: #2271b1 !important;
+	color: #135e96 !important;
+}
+
+.lucidlab-dbc-db-tab-count {
+	display: inline-block;
+	margin-left: 6px;
+	min-width: 1.5em;
+	padding: 0 6px;
+	border-radius: 999px;
+	background: #fff;
+	border: 1px solid var(--dbc-line);
+	color: var(--dbc-ink-2);
+	font-size: 11px;
+	font-weight: 700;
+	line-height: 1.6;
+	text-align: center;
+}
+
+.lucidlab-dbc-db-tabs .nav-tab-active .lucidlab-dbc-db-tab-count {
+	background: #2271b1;
+	border-color: #2271b1;
+	color: #fff;
+}
+
+/* Soft tables */
+.lucidlab-dbc-table-scroll {
+	max-width: 100%;
+	min-width: 0;
+	overflow-x: auto;
+}
+
+.lucidlab-dbc-table {
+	width: 100%;
+	margin: 0;
+	border: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
+	background: transparent;
+	font-size: 13px;
+}
+
+.lucidlab-dbc-table thead th {
+	padding: 10px 12px;
+	text-align: left;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: var(--dbc-muted);
+	background: transparent;
+	border: 0;
+	border-bottom: 1px solid var(--dbc-line);
+	white-space: nowrap;
+}
+
+.lucidlab-dbc-table tbody td,
+.lucidlab-dbc-table tbody th {
+	padding: 14px 12px;
+	vertical-align: top;
+	color: var(--dbc-ink-2);
+	background: transparent;
+	border: 0;
+	border-bottom: 1px solid var(--dbc-line);
+	text-align: left;
+}
+
+.lucidlab-dbc-table tbody th {
+	font-weight: 600;
+	color: var(--dbc-ink);
+}
+
+.lucidlab-dbc-table tbody tr:last-child td,
+.lucidlab-dbc-table tbody tr:last-child th {
+	border-bottom: 0;
+}
+
+.lucidlab-dbc-table tbody tr:nth-child(even) td,
+.lucidlab-dbc-table tbody tr:nth-child(even) th {
+	background: #f7f9fb;
+}
+
+.lucidlab-dbc-table tbody tr:hover td,
+.lucidlab-dbc-table tbody tr:hover th {
+	background: #eaf2fa;
+}
+
+.lucidlab-dbc-table tbody td strong {
+	color: var(--dbc-ink);
+	font-weight: 600;
+}
+
+.lucidlab-dbc-table code {
+	padding: 2px 6px;
+	border-radius: 6px;
+	background: var(--dbc-bg);
+	border: 1px solid var(--dbc-line);
+	color: var(--dbc-ink);
+	font-size: 12px;
+	overflow-wrap: anywhere;
+}
+
+.lucidlab-dbc-table-compact tbody td,
+.lucidlab-dbc-table-compact tbody th {
+	padding: 6px 8px;
+	font-size: 12px;
+}
+
+.lucidlab-dbc-kv tbody th {
+	width: 28%;
+	white-space: nowrap;
+}
+
+.lucidlab-dbc-col-check {
+	width: 28px;
+	padding-left: 4px !important;
+}
+
+.lucidlab-dbc-col-main {
+	min-width: 320px;
+}
+
+.lucidlab-dbc-col-source {
+	min-width: 150px;
+}
+
+.lucidlab-dbc-findings tbody td:nth-child(4),
+.lucidlab-dbc-findings tbody td:nth-child(5),
+.lucidlab-dbc-findings tbody td:nth-child(6) {
+	white-space: nowrap;
+}
+
+.lucidlab-dbc-findings tr[hidden] {
+	display: none;
+}
+
+.lucidlab-dbc-findings tr.is-selected td {
+	background: #eef6ff !important;
+}
+
+.lucidlab-dbc-reason {
+	margin: 6px 0 0;
+	line-height: 1.5;
+}
+
+.lucidlab-dbc-col-check .dashicons-lock {
+	color: #a7aaad;
+	font-size: 16px;
+}
+
+.lucidlab-dbc-wrap input[type="checkbox"] {
+	accent-color: #2271b1;
+}
+
+/* Samples */
+.lucidlab-dbc-samples {
+	margin-top: 8px;
+}
+
+.lucidlab-dbc-samples summary {
+	cursor: pointer;
+	color: #2271b1;
+	font-weight: 600;
+}
+
+.lucidlab-dbc-samples ul {
+	margin: 8px 0 0;
+	padding: 0;
+	list-style: none;
+	max-height: 340px;
+	overflow: auto;
+	border: 1px solid var(--dbc-line);
+	border-radius: 10px;
+	background: #fff;
+}
+
+.lucidlab-dbc-samples li {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px 10px;
+	align-items: baseline;
+	margin: 0;
+	padding: 7px 10px;
+	border-bottom: 1px solid var(--dbc-line);
+}
+
+.lucidlab-dbc-samples li:last-child {
+	border-bottom: 0;
+}
+
+.lucidlab-dbc-sample-label {
+	color: var(--dbc-ink);
+	font-weight: 600;
+	overflow-wrap: anywhere;
+}
+
+.lucidlab-dbc-sample-meta {
+	color: var(--dbc-muted);
+	font-size: 12px;
+	overflow-wrap: anywhere;
+}
+
+.lucidlab-dbc-sample-links {
+	display: inline-flex;
+	gap: 10px;
+	margin-left: auto;
+}
+
+.lucidlab-dbc-sample-links .button-link {
+	font-size: 13px;
+}
+
+/* Badges */
+.lucidlab-dbc-badge {
+	display: inline-block;
+	margin: 0 4px 2px 0;
+	padding: 3px 9px;
+	border-radius: 99px;
+	font-size: 10.5px;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	line-height: 1.4;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.lucidlab-dbc-badge-safe {
+	background: #d7f0db;
+	color: #116329;
+}
+
+.lucidlab-dbc-badge-warn {
+	background: #fde7c9;
+	color: #8a5a00;
+}
+
+.lucidlab-dbc-badge-risk {
+	background: #fbdada;
+	color: #a4231c;
+}
+
+.lucidlab-dbc-badge-info {
+	background: #eaf2fa;
+	color: #135e96;
+}
+
+/* Action bar, confirm, danger buttons */
+.lucidlab-dbc-actionbar {
+	position: sticky;
+	bottom: 0;
+	z-index: 2;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 -26px -26px;
+	padding: 14px 26px;
+	background: #fff;
+	border-top: 2px solid var(--dbc-line);
+	border-radius: 0 0 18px 18px;
+}
+
+.lucidlab-dbc-selection {
+	font-weight: 600;
+	color: var(--dbc-ink);
+}
+
+.lucidlab-dbc-toggle {
+	display: inline-flex;
+	gap: 8px;
+	align-items: center;
+	font-weight: 600;
+	color: #a4231c;
+}
+
+.lucidlab-dbc-backup-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	align-items: center;
+}
+
+.lucidlab-dbc-row-status {
+	margin: 4px 0 0;
+	font-weight: 600;
+	white-space: normal;
+}
+
+/* Notices */
+#wpbody .lucidlab-dbc-wrap .notice {
+	position: relative;
+	margin: 0;
+	padding: 13px 18px;
+	border: 1px solid #d6e6f5;
+	border-radius: 12px;
+	background: #eaf2fa;
+	color: #0f2a3a;
+	box-shadow: none;
+}
+
+#wpbody .lucidlab-dbc-wrap .notice p {
+	margin: 0.3em 0;
+	font-size: 13.5px;
+}
+
+#wpbody .lucidlab-dbc-wrap .notice-success {
+	background: #e9f7ef;
+	color: #106b33;
+	border-color: #bfe6cd;
+}
+
+#wpbody .lucidlab-dbc-wrap .notice-error {
+	background: #fcf0f1;
+	color: #a12224;
+	border-color: #f3c9cb;
+}
+
+#wpbody .lucidlab-dbc-wrap .notice-warning {
+	background: #fff8e8;
+	color: #8a5b00;
+	border-color: #f0ddb0;
+}
+
+#wpbody .lucidlab-dbc-wrap .notice-info {
+	background: #eaf2fa;
+	color: #135e96;
+	border-color: #d6e6f5;
+}
+
+.lucidlab-dbc-wrap [hidden] {
+	display: none !important;
+}
+
+/* Progress */
+.lucidlab-dbc-progress {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.lucidlab-dbc-progress-track {
+	height: 14px;
+	border-radius: 999px;
+	background: #e6edf3;
+	overflow: hidden;
+	box-shadow: inset 0 1px 2px rgba(15, 42, 58, 0.08);
+}
+
+.lucidlab-dbc-progress-bar {
+	height: 100%;
+	width: 0;
+	border-radius: 999px;
+	background: linear-gradient(90deg, #1769aa, #51a8d8);
+	transition: width 0.3s ease;
+}
+
+.lucidlab-dbc-progress-text {
+	margin: 0;
+	font-weight: 600;
+	color: var(--dbc-ink-2);
+}
+
+/* Inspect dialog */
+.lucidlab-dbc-dialog {
+	width: min(980px, 92vw);
+	max-height: 84vh;
+	padding: 0;
+	border: 1px solid var(--dbc-line);
+	border-radius: 16px;
+	box-shadow: 0 24px 60px -20px rgba(15, 42, 58, 0.45);
+}
+
+.lucidlab-dbc-dialog::backdrop {
+	background: rgba(15, 42, 58, 0.45);
+}
+
+.lucidlab-dbc-dialog-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 12px;
+	padding: 14px 18px;
+	background: linear-gradient(120deg, #102a43, #1769aa 58%, #51a8d8);
+	color: #fff;
+}
+
+.lucidlab-dbc-dialog-body {
+	padding: 16px 18px;
+	overflow: auto;
+	max-height: calc(84vh - 64px);
+}
+
+.lucidlab-dbc-dialog-body h4 {
+	margin: 16px 0 8px;
+}
+
+.lucidlab-dbc-pre {
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+	max-height: 50vh;
+	overflow: auto;
+	padding: 12px;
+	background: var(--dbc-bg);
+	border: 1px solid var(--dbc-line);
+	border-radius: 10px;
+	font-size: 12px;
+}
+
+.lucidlab-dbc-nowrap {
+	white-space: nowrap;
+}
+
+#wpbody .lucidlab-dbc-wrap .notice.inline {
+	display: block;
+}
+
+/* Database summary */
+.lucidlab-dbc-summary {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+	gap: 16px;
+}
+
+.lucidlab-dbc-summary-block {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 16px;
+	border: 1px solid var(--dbc-line);
+	border-radius: 14px;
+	background: var(--dbc-bg);
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-summary-block h4 {
+	margin: 0;
+	font-size: 14px;
+	color: var(--dbc-ink);
+}
+
+.lucidlab-dbc-summary .lucidlab-dbc-stat {
+	min-width: 120px;
+	padding: 12px;
+}
+
+.lucidlab-dbc-summary .lucidlab-dbc-num {
+	font-size: 19px;
+}
+
+.lucidlab-dbc-stat-good {
+	background: linear-gradient(180deg, #e3f5e8, #f3fbf5);
+	border-color: #bfe6cd;
+}
+
+.lucidlab-dbc-stat-good .lucidlab-dbc-num {
+	color: #116329;
+}
+
+.lucidlab-dbc-compare td,
+.lucidlab-dbc-compare th {
+	white-space: nowrap;
+}
+
+.lucidlab-dbc-compare tbody tr.lucidlab-dbc-compare-group th {
+	padding-top: 16px;
+	background: transparent !important;
+	color: #135e96;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+.lucidlab-dbc-log .lucidlab-dbc-samples table {
+	margin-top: 8px;
+	background: #fff;
+	border: 1px solid var(--dbc-line);
+	border-radius: 10px;
+}
+
+.lucidlab-dbc-stats-five .lucidlab-dbc-stat {
+	min-width: 120px;
+	padding: 14px 10px;
+}
+
+.lucidlab-dbc-stats-five .lucidlab-dbc-lbl {
+	font-size: 11px;
+	letter-spacing: 0.02em;
+}
+
+/* Clean all safe items, schedule & e-mail (1.2.0) */
+.lucidlab-dbc-inline-confirm .lucidlab-dbc-table {
+	max-width: 560px;
+	margin: 8px 0;
+	background: #fff;
+}
+
+.lucidlab-dbc-schedule .lucidlab-dbc-card-title + .lucidlab-dbc-field-row,
+.lucidlab-dbc-schedule .lucidlab-dbc-card-title + .lucidlab-dbc-field {
+	margin-top: 8px;
+}
+
+.lucidlab-dbc-schedule > .lucidlab-dbc-card-title {
+	margin-top: 22px;
+}
+
+.lucidlab-dbc-field {
+	margin: 0 0 12px;
+	padding: 0;
+	border: 0;
+}
+
+.lucidlab-dbc-field > label:first-child,
+.lucidlab-dbc-field legend {
+	display: block;
+	margin-bottom: 4px;
+	font-weight: 600;
+}
+
+.lucidlab-dbc-field .lucidlab-dbc-hint {
+	display: block;
+	margin-top: 4px;
+}
+
+.lucidlab-dbc-field-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px 28px;
+}
+
+.lucidlab-dbc-field[hidden] {
+	display: none;
+}
+
+.lucidlab-dbc-radio {
+	display: inline-flex;
+	gap: 6px;
+	align-items: center;
+	margin-right: 18px;
+}
+
+.lucidlab-dbc-cron-note {
+	margin: 4px 0 12px;
+}
+
+.lucidlab-dbc-kv {
+	max-width: 760px;
+	margin-bottom: 12px;
+}
+
+/*
+ * Shared buttons (1.3.0): the button style of Lucid Lab Media & Products Cleaner.
+ * Secondary: white with a blue border, filled dark blue on hover. Primary: #2271b1, #135e96 on
+ * hover. Danger: #a4231c. Danger text: red outline. Busy: white with a border in the button's
+ * colour and a spinner; set by assets/js/admin.js (busy()).
+ */
+#wpbody .lucidlab-dbc-wrap .button.lldbc-btn {
+	--lldbc-btn: #2271b1;
+	--lldbc-btn-hover: #135e96;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	box-sizing: border-box;
+	height: 32px;
+	min-height: 0;
+	margin: 0;
+	padding: 0 14px;
+	border: 1px solid var(--lldbc-btn);
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: none;
+	color: var(--lldbc-btn);
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 30px;
+	white-space: nowrap;
+	transition:
+		background-color 0.18s ease,
+		border-color 0.18s ease,
+		color 0.18s ease,
+		box-shadow 0.18s ease,
+		transform 0.18s ease;
+}
+
+/* Icons and the busy spinner sit on the text line, vertically centred, without offset hacks. */
+#wpbody .lucidlab-dbc-wrap .button.lldbc-btn .dashicons {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	width: 16px;
+	height: 16px;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	line-height: 1;
+	vertical-align: middle;
+}
+
+#wpbody .lucidlab-dbc-wrap .button.lldbc-btn .dashicons::before {
+	line-height: 1;
+}
+
+#wpbody .lucidlab-dbc-wrap .button.lldbc-btn.button-small {
+	height: 26px;
+	padding: 0 10px;
+	font-size: 12px;
+	line-height: 24px;
+}
+
+#wpbody .lucidlab-dbc-wrap .button.lldbc-btn:is(:hover, :focus-visible):not(:disabled) {
+	border-color: var(--lldbc-btn-hover);
+	background: var(--lldbc-btn-hover);
+	color: #fff;
+}
+
+#wpbody .lucidlab-dbc-wrap .button.lldbc-btn:hover:not(:disabled) {
+	box-shadow: 0 3px 8px rgba(34, 113, 177, 0.18);
+	transform: translateY(-1px);
+}
+
+#wpbody .lucidlab-dbc-wrap .button.lldbc-btn:active:not(:disabled) {
+	box-shadow: none;
+	transform: translateY(0) scale(0.98);
+}
+
+#wpbody .lucidlab-dbc-wrap .button.lldbc-btn.button-primary {
+	background: var(--lldbc-btn);
+	color: #fff;
+}
+
+#wpbody .lucidlab-dbc-wrap .button.lldbc-btn.lucidlab-dbc-danger {
+	--lldbc-btn: #a4231c;
+	--lldbc-btn-hover: #8a1d17;
+	background: var(--lldbc-btn);
+	color: #fff;
+}
+
+#wpbody .lucidlab-dbc-wrap .button.lldbc-btn.lucidlab-dbc-danger-text {
+	--lldbc-btn: #a4231c;
+	border-color: #c9a19e;
+	background: #fff;
+	color: #a4231c;
+}
+
+#wpbody .lucidlab-dbc-wrap .button.lldbc-btn.lucidlab-dbc-danger-text:is(:hover, :focus-visible):not(:disabled) {
+	border-color: #d63638;
+	background: #fcf0f1;
+	color: #a4231c;
+}
+
+/* WordPress core styles disabled buttons with !important; ours keep the button colour. */
+#wpbody .lucidlab-dbc-wrap .button.lldbc-btn:disabled {
+	border-color: var(--lldbc-btn) !important;
+	background: #fff !important;
+	box-shadow: none !important;
+	color: var(--lldbc-btn) !important;
+	text-shadow: none !important;
+	opacity: 0.55;
+	cursor: not-allowed;
+}
+
+#wpbody .lucidlab-dbc-wrap .button.lldbc-btn.button-primary:disabled {
+	background: var(--lldbc-btn) !important;
+	color: #fff !important;
+}
+
+#wpbody .lucidlab-dbc-wrap .button.lldbc-btn.lucidlab-dbc-danger:disabled {
+	border-color: #e6a6a1 !important;
+	background: #e6a6a1 !important;
+	color: #fff !important;
+	opacity: 1;
+}
+
+#wpbody .lucidlab-dbc-wrap .button.lldbc-btn.is-busy,
+#wpbody .lucidlab-dbc-wrap .button.lldbc-btn.is-busy:disabled {
+	border-color: var(--lldbc-btn) !important;
+	background: #fff !important;
+	box-shadow: none !important;
+	color: var(--lldbc-btn) !important;
+	opacity: 1;
+	transform: none;
+	cursor: progress;
+	pointer-events: none;
+}
+
+#wpbody .lucidlab-dbc-wrap .button.lldbc-btn.is-busy .dashicons {
+	display: none;
+}
+
+.lldbc-btn-spinner {
+	flex: none;
+	box-sizing: border-box;
+	width: 14px;
+	height: 14px;
+	border: 2px solid currentcolor;
+	border-right-color: transparent;
+	border-radius: 50%;
+	animation: lldbc-spin 0.7s linear infinite;
+}
+
+@keyframes lldbc-spin {
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	#wpbody .lucidlab-dbc-wrap .button.lldbc-btn {
+		transition: none;
+	}
+
+	#wpbody .lucidlab-dbc-wrap .button.lldbc-btn:hover:not(:disabled),
+	#wpbody .lucidlab-dbc-wrap .button.lldbc-btn:active:not(:disabled) {
+		transform: none;
+	}
+
+	.lldbc-btn-spinner {
+		border-right-color: currentcolor;
+		border-bottom-color: transparent;
+		animation-duration: 2s;
+	}
+}
+
+/* Full backup (1.3.0) */
+.lucidlab-dbc-file-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	align-items: center;
+}
+
+.lucidlab-dbc-restore-dialog {
+	width: min(720px, 92vw);
+}
+
+.lucidlab-dbc-restore-dialog .lucidlab-dbc-field input[type="text"] {
+	width: 220px;
+	font-family: Consolas, Monaco, monospace;
+	letter-spacing: 0.08em;
+}
+
+.lucidlab-dbc-warn-list {
+	margin: 6px 0 0 18px;
+	list-style: disc;
+}
+
+.lucidlab-dbc-backup-actions .lucidlab-dbc-row-status {
+	flex-basis: 100%;
+}
+
+/* Pro badge, locked Pro cards and tabs */
+.lucidlab-dbc-wrap .lucidlab-dbc-pro-badge {
+	display: inline-block;
+	margin: 0 0 0 4px;
+	padding: 1px 7px;
+	border-radius: 999px;
+	background: linear-gradient(135deg, #2271b1, #6c3fc5);
+	color: #fff;
+	font-size: 10.5px;
+	font-weight: 700;
+	line-height: 1.5;
+	letter-spacing: 0.02em;
+	vertical-align: middle;
+	flex: none;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-tab-locked {
+	color: var(--dbc-muted);
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-card-locked {
+	border-style: dashed;
+	background: var(--dbc-surface);
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-card-locked .lucidlab-dbc-card-title,
+.lucidlab-dbc-wrap .lucidlab-dbc-card-locked .lucidlab-dbc-card-lede {
+	color: var(--dbc-ink-2);
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-pro-points {
+	margin: 0 0 12px;
+	padding: 0;
+	list-style: none;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-pro-points li {
+	display: flex;
+	gap: 6px;
+	align-items: center;
+	margin: 0 0 4px;
+	color: var(--dbc-ink-2);
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-pro-points .dashicons {
+	color: var(--dbc-muted);
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-pro-notice {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-pro-notice[hidden] {
+	display: none;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-pro-dismiss {
+	flex: none;
+}
+
+/* Install ping notice and documentation link */
+.lucidlab-dbc-wrap .lucidlab-dbc-ping-notice {
+	display: flex;
+	gap: 12px 18px;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-ping-notice[hidden] {
+	display: none;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-ping-notice-text {
+	flex: 1 1 420px;
+	min-width: 0;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-ping-notice .lucidlab-dbc-btn-row {
+	flex: none;
+	margin: 0;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-ping-notice .lucidlab-dbc-hint:empty {
+	display: none;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-head-link {
+	color: #2271b1;
+	text-decoration: none;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-head-link:hover,
+.lucidlab-dbc-wrap .lucidlab-dbc-head-link:focus {
+	color: #135e96;
+	text-decoration: underline;
+}
