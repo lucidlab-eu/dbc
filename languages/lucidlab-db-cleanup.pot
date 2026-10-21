@@ -1,0 +1,2804 @@
+# Copyright (C) 2026 Lucid Lab
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Lucid Lab Database Cleaner 1.5.0\n"
+"Report-Msgid-Bugs-To: https://lucidlab.eu/\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-20T23:16:56+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: lucidlab-db-cleanup\n"
+
+#. Plugin Name of the plugin
+#: lucidlab-db-cleanup.php
+#: includes/class-lucidlab-dbc-plugin.php:562
+#: lucidlab-db-cleanup.php:115
+msgid "Lucid Lab Database Cleaner"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: lucidlab-db-cleanup.php
+msgid "https://lucidlab.eu/"
+msgstr ""
+
+#. Description of the plugin
+#: lucidlab-db-cleanup.php
+msgid "Read-only scan of the whole database for unused, orphaned and leftover records and tables, grouped by category. Delete only what you select, after an automatic SQL backup that you can restore. Complete database backup and restore, autoload checker and table engine report."
+msgstr ""
+
+#. Author of the plugin
+#: lucidlab-db-cleanup.php
+msgid "Lucid Lab"
+msgstr ""
+
+#. Author URI of the plugin
+#: lucidlab-db-cleanup.php
+msgid "https://lucidlab.eu"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-automation.php:180
+#: includes/class-lucidlab-dbc-insights.php:168
+msgid "A background cleanup is running. Wait until it has finished."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-automation.php:184
+msgid "There are no safe items to clean. Run the scan first."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-backup.php:116
+msgid "The backup folder in wp-content/uploads is not writable, so nothing was deleted."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-backup.php:129
+msgid "Could not write the backup file, so nothing was deleted."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-backup.php:364
+#: includes/class-lucidlab-dbc-plugin.php:2582
+#: includes/class-lucidlab-dbc-plugin.php:2604
+#: includes/class-lucidlab-dbc-restore.php:251
+msgid "Backup file not found."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-backup.php:367
+msgid "This backup file was changed after it was written, was not made on this site, or is incomplete, so it is not restored. You can still download it and import it with your own database tool."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-backup.php:373
+msgid "Backup file could not be opened."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-backup.php:404
+msgid "Skipped a line that is not a backup statement for this site."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-cleaner.php:192
+#: includes/class-lucidlab-dbc-cleaner.php:245
+msgid "Another cleanup is still running. Wait a moment and try again."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-cleaner.php:203
+msgid "not marked safe; skipped."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-cleaner.php:207
+msgid "risky and not confirmed; skipped."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-cleaner.php:226
+msgid "Nothing to clean: the selected findings are no longer valid. Run the scan again."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-cleaner.php:249
+msgid "No tables with this site’s prefix were found."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-cleaner.php:265
+msgid "No cleanup is running."
+msgstr ""
+
+#. translators: %d: number of findings that were not cleaned.
+#: includes/class-lucidlab-dbc-cleaner.php:282
+#, php-format
+msgid "Stopped on request: %d finding was not cleaned."
+msgid_plural "Stopped on request: %d findings were not cleaned."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-lucidlab-dbc-cleaner.php:426
+msgid "The request ended while the database was optimizing this table; the database finished the work in the background."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-cleaner.php:535
+msgid "The cleanup progress could not be saved; the job was stopped."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-cleaner.php:635
+msgid "posts could not be deleted."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-cleaner.php:669
+msgid "terms could not be deleted."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-cleaner.php:686
+msgid "nothing to delete."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-cleaner.php:704
+msgid "rows could not be deleted."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-cleaner.php:727
+msgid "could not back up the table structure; the table was kept."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-cleaner.php:760
+msgid "could not write the backup; the table was kept."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-cleaner.php:818
+msgid "could not write the backup file, so nothing was deleted."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-database.php:254
+msgid "The table no longer exists."
+msgstr ""
+
+#. translators: %s: storage engine.
+#: includes/class-lucidlab-dbc-database.php:260
+#, php-format
+msgid "The %s storage engine cannot be optimized; skipped."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-database.php:287
+msgid "The database did not answer."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-database.php:294
+msgid "InnoDB: rebuilt the table and refreshed its statistics (recreate + analyze)."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-database.php:297
+msgid "Already optimized; nothing to do."
+msgstr ""
+
+#. translators: %s: storage engine.
+#: includes/class-lucidlab-dbc-database.php:301
+#, php-format
+msgid "%s: defragmented the data file and sorted the indexes."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-fullbackup.php:323
+msgid "A restore is in progress. Finish or cancel it first."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-fullbackup.php:328
+msgid "A full backup is already being written. Wait until it has finished."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-fullbackup.php:333
+msgid "The backup folder in wp-content/uploads is not writable."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-fullbackup.php:336
+msgid "The PHP zlib extension is missing, so a compressed backup cannot be written."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-fullbackup.php:352
+msgid "No tables found."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-fullbackup.php:377
+msgid "Could not write the backup file."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-fullbackup.php:506
+msgid "No full backup is being written."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-fullbackup.php:518
+msgid "The backup file could not be opened. It may have been deleted."
+msgstr ""
+
+#. translators: %s: table name.
+#: includes/class-lucidlab-dbc-fullbackup.php:531
+#, php-format
+msgid "Table %s was skipped: it no longer exists or SHOW CREATE failed."
+msgstr ""
+
+#. translators: 1: table name, 2: database error.
+#: includes/class-lucidlab-dbc-fullbackup.php:552
+#, php-format
+msgid "Rows of %1$s could not be read: %2$s"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-fullbackup.php:574
+msgid "The backup position could not be saved in the database."
+msgstr ""
+
+#. translators: %s: number of bytes.
+#: includes/class-lucidlab-dbc-helpers.php:28
+#, php-format
+msgid "%s B"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-insights.php:173
+msgid "No post has more revisions than that."
+msgstr ""
+
+#. translators: %s: number of revisions kept per post.
+#: includes/class-lucidlab-dbc-insights.php:180
+#, php-format
+msgid "Revisions above the newest %s per post"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-known.php:1129
+msgid "WordPress core"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-known.php:1131
+msgid "Active theme"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-known.php:1131
+msgid "Active plugin"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-known.php:1133
+msgid "Theme installed, not active"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-known.php:1133
+msgid "Plugin installed, not active"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-known.php:1135
+msgid "Theme not installed"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-known.php:1135
+msgid "Plugin not installed"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-known.php:1137
+#: includes/class-lucidlab-dbc-scanner.php:487
+#: includes/class-lucidlab-dbc-scanner.php:1111
+msgid "Unknown owner"
+msgstr ""
+
+#. translators: 1: table number, 2: number of tables.
+#: includes/class-lucidlab-dbc-plugin.php:136
+#, php-format
+msgid "Measuring the database before the cleanup: ANALYZE TABLE %1$s of %2$s…"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:137
+msgid "Measuring size, tables and records before the cleanup…"
+msgstr ""
+
+#. translators: 1: table name, 2: table number, 3: number of tables.
+#: includes/class-lucidlab-dbc-plugin.php:139
+#, php-format
+msgid "OPTIMIZE TABLE %1$s (%2$s of %3$s)… InnoDB tables are rebuilt, which takes longer for large tables."
+msgstr ""
+
+#. translators: 1: table number, 2: number of tables.
+#: includes/class-lucidlab-dbc-plugin.php:141
+#, php-format
+msgid "Refreshing table statistics: ANALYZE TABLE %1$s of %2$s…"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:142
+msgid "Measuring size, tables and records after the cleanup…"
+msgstr ""
+
+#. translators: %s: table name.
+#: includes/class-lucidlab-dbc-plugin.php:144
+#, php-format
+msgid "The database is still busy with the previous step (%s). Waiting…"
+msgstr ""
+
+#. translators: 1: attempt, 2: maximum attempts.
+#: includes/class-lucidlab-dbc-plugin.php:146
+#, php-format
+msgid "The request failed; trying again (%1$s of %2$s)…"
+msgstr ""
+
+#. translators: 1: size saved, 2: percentage.
+#: includes/class-lucidlab-dbc-plugin.php:148
+#, php-format
+msgid "Done. Saved %1$s (%2$s%%). Opening the summary…"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:149
+msgid "Measuring the database…"
+msgstr ""
+
+#. translators: %s: category name.
+#: includes/class-lucidlab-dbc-plugin.php:151
+#, php-format
+msgid "Scanning %s…"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:152
+msgid "Scan finished. Reloading…"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:153
+msgid "Finished with problems:"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:154
+msgid "View the database summary and log"
+msgstr ""
+
+#. translators: 1: number of selected findings, 2: size.
+#: includes/class-lucidlab-dbc-plugin.php:156
+#, php-format
+msgid "%1$s selected · about %2$s"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:157
+#: includes/class-lucidlab-dbc-plugin.php:970
+msgid "Nothing selected"
+msgstr ""
+
+#. translators: 1: current finding, 2: finding number, 3: total findings, 4: rows deleted.
+#: includes/class-lucidlab-dbc-plugin.php:159
+#, php-format
+msgid "Cleaning “%1$s” (%2$s of %3$s) · %4$s rows backed up and deleted"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:160
+msgid "Cleanup finished. Updating the scan results…"
+msgstr ""
+
+#. translators: %s: percentage.
+#: includes/class-lucidlab-dbc-plugin.php:162
+#, php-format
+msgid "Restoring… %s%%"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:163
+msgid "Backup restored. Run a new scan to update the results."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:164
+msgid "The request failed. Check the PHP error log; nothing after the last finished batch was changed."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:165
+msgid "Loading…"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:166
+#: includes/class-lucidlab-dbc-plugin.php:666
+#: includes/class-lucidlab-dbc-plugin.php:1757
+msgid "Close"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:167
+msgid "Backup deleted."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:168
+msgid "Checking the safe findings and writing the backup…"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:169
+msgid "Saving…"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:170
+msgid "Settings saved."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:171
+msgid "Settings saved. Run the scan again to use the new age."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:172
+msgid "Sending…"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:173
+msgid "Not scheduled"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:174
+msgid "Working…"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:175
+msgid "Preparing the full backup…"
+msgstr ""
+
+#. translators: 1: table number, 2: number of tables, 3: table name, 4: records written, 5: file size.
+#: includes/class-lucidlab-dbc-plugin.php:177
+#, php-format
+msgid "Table %1$s of %2$s: %3$s · %4$s records written · %5$s"
+msgstr ""
+
+#. translators: 1: file size, 2: number of tables, 3: number of records, 4: seconds.
+#: includes/class-lucidlab-dbc-plugin.php:179
+#, php-format
+msgid "Full backup finished: %1$s, %2$s tables, %3$s records in %4$s s."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:180
+msgid "Safety backup of the current database first…"
+msgstr ""
+
+#. translators: %s: amount unpacked.
+#: includes/class-lucidlab-dbc-plugin.php:182
+#, php-format
+msgid "Unpacking the backup… %s"
+msgstr ""
+
+#. translators: 1: percentage, 2: number of tables, 3: number of statements.
+#: includes/class-lucidlab-dbc-plugin.php:184
+#, php-format
+msgid "Importing into temporary tables… %1$s%% · %2$s tables · %3$s statements"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:185
+msgid "Replacing the live tables…"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:186
+msgid "All statements are imported into temporary tables. Checking them before the live tables are replaced…"
+msgstr ""
+
+#. translators: 1: number of tables, 2: seconds.
+#: includes/class-lucidlab-dbc-plugin.php:188
+#, php-format
+msgid "Restore finished: %1$s tables restored in %2$s s. If WordPress asks you to log in again, use the login of the restored database. Reloading…"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:189
+msgid "The restore stopped. The live tables were not replaced. Fix the problem and continue, or cancel to remove the temporary tables."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:190
+#: includes/class-lucidlab-dbc-plugin.php:2250
+msgid "Please check before the live tables are replaced:"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:191
+msgid "Restore cancelled; the temporary tables were removed and nothing was changed."
+msgstr ""
+
+#. translators: 1: amount uploaded, 2: total size.
+#: includes/class-lucidlab-dbc-plugin.php:193
+#, php-format
+msgid "Uploading… %1$s of %2$s"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:194
+msgid "Upload finished. Reloading…"
+msgstr ""
+
+#. translators: %s: site URL stored in the backup.
+#: includes/class-lucidlab-dbc-plugin.php:196
+#, php-format
+msgid "This backup was made on %s, not on this site. After the restore the site uses that address, which can make wp-admin unreachable here."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:197
+msgid "Choose a .sql or .sql.gz file first."
+msgstr ""
+
+#. translators: %s: number of skipped statements.
+#: includes/class-lucidlab-dbc-plugin.php:199
+#: includes/class-lucidlab-dbc-plugin.php:1631
+#, php-format
+msgid "%s statements were skipped (not table data)."
+msgstr ""
+
+#. translators: 1: number of revisions, 2: number of posts.
+#: includes/class-lucidlab-dbc-plugin.php:201
+#, php-format
+msgid "%1$s revisions of %2$s posts would be removed."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:202
+msgid "No post has more revisions than that. Nothing to remove."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:203
+msgid "Saved. This site now tells Lucid Lab that it uses the plugin. You can turn it off on the Settings tab."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:204
+msgid "Saved. Nothing is sent to Lucid Lab."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:224
+msgid "Overview"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:225
+msgid "Database summary & log"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:230
+#: includes/class-lucidlab-dbc-plugin.php:380
+msgid "Autoload checker"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:231
+msgid "Engines & charset"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:232
+msgid "Backups & restore"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:233
+msgid "Full backup"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:234
+#: includes/class-lucidlab-dbc-plugin.php:288
+msgid "Settings"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:272
+msgid "Overview & reports"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:276
+msgid "Clean up"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:280
+#: includes/class-lucidlab-dbc-plugin.php:1106
+msgid "Backups"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:284
+msgid "Tools"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:329
+msgid "Schedule & e-mail"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:330
+msgid "Clean the safe items automatically every week or month at night, with an optional full backup first, and get a report by e-mail."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:332
+msgid "Weekly or monthly cleanups at a time of your choice"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:333
+msgid "Scheduled full backup before each cleanup"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:334
+msgid "Report e-mail with before/after numbers"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:338
+msgid "WooCommerce deep clean"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:339
+msgid "Old WooCommerce sessions, finished Action Scheduler actions and logs older than a number of days you choose, and order item meta and HPOS order data of deleted orders."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:341
+msgid "Action Scheduler: completed, failed and canceled actions older than N days, with their logs"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:342
+msgid "Orphaned order item meta and HPOS order meta, addresses and operational data"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:343
+msgid "Backup before every delete, restore with one click"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:347
+msgid "Extended orphan scan"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:348
+msgid "Goes beyond the orphaned meta of the free scan: duplicate meta rows, meta with empty keys, term relationships of deleted objects and term data whose parent is gone."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:350
+msgid "Duplicate post, user, term and comment meta"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:351
+msgid "Term taxonomy rows and term meta without a term"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:352
+msgid "Every delete is backed up first"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:356
+msgid "Growth chart"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:357
+msgid "A weekly size snapshot with a chart of two years and the biggest and fastest-growing tables."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:359
+#: includes/class-lucidlab-dbc-plugin.php:366
+msgid "Database growth chart (104 weeks)"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:360
+msgid "Biggest and fastest-growing tables per week"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:363
+msgid "Growth & indexes"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:364
+msgid "A weekly size snapshot with a chart of two years, the biggest and fastest-growing tables, and missing indexes on meta tables that you can add with one click."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:367
+msgid "Fastest-growing tables per week"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:368
+#: includes/class-lucidlab-dbc-plugin.php:376
+msgid "Index suggestions with backup, confirmation and undo"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:372
+msgid "Index tools"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:373
+msgid "Finds tables without a primary key and missing indexes on common WordPress and WooCommerce lookup columns, and adds an index with one click after a structure backup."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:375
+msgid "Tables without a primary key"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:381
+msgid "The full autoload checker: the 50 largest autoloaded options with their likely source, size and share, and a switch to turn autoload off (or on again) per option. Every switch is backed up and can be undone."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:383
+msgid "Total autoload size with the 800 KB warning of WordPress"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:384
+msgid "Turn autoload off or on per option, core options protected"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:385
+msgid "Backup and undo of every switch"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:389
+msgid "Search & replace"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:390
+msgid "Replace text in the database safely, for example after a domain change: serialized and JSON data stay valid, a dry run shows the counts first and the affected rows are backed up."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:392
+msgid "Dry run with counts per table"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:393
+msgid "Serialized and JSON aware, GUIDs skipped by default"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:394
+msgid "Backup of the changed rows, undo from Backups & restore"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:398
+msgid "Health alerts"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:399
+msgid "A daily check that e-mails you when the database, the autoloaded options or a table grows past the limits you set."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:401
+msgid "Database size, autoload size and weekly table growth"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:402
+msgid "One e-mail per problem, not every day"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:557
+msgid "Sorry, you are not allowed to access this page."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:578
+#: lucidlab-db-cleanup.php:161
+msgid "Documentation"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:578
+msgid "(opens in a new tab)"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:585
+msgid "Database Cleaner sections"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:622
+msgid "This plugin works on single sites only. On a multisite network the tables of every site share one database, which this version does not analyse. Nothing is scanned or deleted."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:682
+msgid "Finds records and tables that WordPress, WooCommerce and your plugins no longer use, explains where they came from, and removes the ones you select after writing a backup you can restore."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:683
+msgid "Size, tables and records of this site and of the whole database, the before/after result of every cleanup, and table optimization."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:684
+msgid "Every cleanup first writes the affected rows to an SQL file in a protected uploads folder. Restore a cleanup here, download the file, or delete old backups."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:685
+msgid "A complete copy of the database as a compressed SQL file, written in small steps by PHP so it also works on shared hosting. Download it or restore it."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:686
+msgid "Options marked “autoload” are read on every page view. This read-only report lists the largest ones, who created them and the total size."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:687
+msgid "Options of the free plugin. Nothing here changes the database."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:688
+msgid "Storage engine and character set of every table. InnoDB and utf8mb4 are what WordPress recommends; this report only reads the database."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:703
+msgid "Database Cleaner Pro"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:703
+#: lucidlab-db-cleanup.php:116
+msgid "Database Cleaner"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:725
+msgid "Scan again"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:725
+msgid "Scan the database"
+msgstr ""
+
+#. translators: %s: date and time.
+#: includes/class-lucidlab-dbc-plugin.php:731
+#, php-format
+msgid "Last scan: %s. Scanning only reads the database."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:733
+msgid "Scanning only reads the database; nothing is changed."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:760
+msgid "Scan"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:761
+msgid "The scan checks every table with this site’s prefix: posts of post types that nothing registers any more (such as old newsletters), revisions, trash, orphaned meta, terms and comments, expired transients, settings and tables of removed plugins, and stale WooCommerce data. Nothing is selected for you; WordPress core, WooCommerce core and active plugins are protected."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:766
+#: includes/class-lucidlab-dbc-plugin.php:788
+#: includes/class-lucidlab-dbc-plugin.php:855
+#: includes/class-lucidlab-dbc-plugin.php:917
+#: includes/class-lucidlab-dbc-plugin.php:927
+msgid "Findings"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:767
+#: includes/class-lucidlab-dbc-plugin.php:928
+msgid "Reclaimable (estimate)"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:768
+#: includes/class-lucidlab-dbc-plugin.php:929
+msgid "Of which marked safe"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:769
+msgid "Safe / review / risky"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:781
+msgid "Results per category"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:782
+msgid "Open a category to see each finding, where it came from and why it is considered unused. Sizes are estimates of data plus indexes."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:787
+#: includes/class-lucidlab-dbc-plugin.php:854
+msgid "Category"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:789
+#: includes/class-lucidlab-dbc-plugin.php:956
+msgid "Confidence"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:790
+#: includes/class-lucidlab-dbc-plugin.php:856
+#: includes/class-lucidlab-dbc-plugin.php:958
+#: includes/class-lucidlab-dbc-plugin.php:1666
+#: includes/class-lucidlab-dbc-plugin.php:2001
+#: includes/class-lucidlab-dbc-plugin.php:2121
+#: includes/class-lucidlab-dbc-plugin.php:2486
+#: includes/class-lucidlab-dbc-plugin.php:2501
+msgid "Size"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:791
+#: includes/class-lucidlab-dbc-plugin.php:809
+#: lucidlab-db-cleanup.php:147
+msgid "Open"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:829
+msgid "Clean all safe items"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:830
+msgid "One click for every finding marked “safe”: first a backup of all affected rows, then the delete, then the affected tables are optimized and the result is measured and logged. Findings marked review, risky or info, protected data and data of Lucid Lab plugins are never included."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:833
+msgid "The last scan found nothing marked safe."
+msgstr ""
+
+#. translators: 1: number of findings, 2: size.
+#: includes/class-lucidlab-dbc-plugin.php:840
+#, php-format
+msgid "Clean all safe items (%1$s · %2$s)…"
+msgstr ""
+
+#. translators: %s: date and time of the scan.
+#: includes/class-lucidlab-dbc-plugin.php:846
+#, php-format
+msgid "Based on the scan of %s; every finding is checked again before it is deleted."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:851
+msgid "These safe findings will be backed up and deleted:"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:862
+msgid "Total"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:865
+msgid "You can undo the cleanup under Backups & restore."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:867
+msgid "Back up and clean all safe items"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:868
+#: includes/class-lucidlab-dbc-plugin.php:979
+#: includes/class-lucidlab-dbc-plugin.php:1287
+#: includes/class-lucidlab-dbc-plugin.php:1775
+msgid "Cancel"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:890
+#: includes/class-lucidlab-dbc-plugin.php:943
+msgid "Safe"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:891
+#: includes/class-lucidlab-dbc-plugin.php:944
+msgid "Review"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:892
+#: includes/class-lucidlab-dbc-plugin.php:945
+msgid "Risky"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:893
+msgid "Info"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:910
+#: includes/class-lucidlab-dbc-plugin.php:1002
+msgid "Other"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:918
+msgid "Select what you want to remove. Safe = nothing can use it; Review = probably unused, check first; Risky = ownership unclear or still connected to something active. Nothing is pre-selected."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:922
+msgid "This category has not been scanned yet."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:924
+msgid "Nothing found in this category. Your database is clean here."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:931
+msgid "Filter by group"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:932
+msgid "All"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:938
+msgid "Select all safe"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:939
+msgid "Clear selection"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:940
+msgid "Show"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:942
+msgid "All confidence levels"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:946
+msgid "Info only"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:953
+msgid "Select all visible safe and review findings"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:954
+msgid "What it is"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:955
+#: includes/class-lucidlab-dbc-plugin.php:2000
+msgid "Likely source"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:957
+#: includes/class-lucidlab-dbc-plugin.php:2217
+msgid "Count"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:971
+msgid "Delete selected…"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:975
+msgid "All affected rows (and whole tables) are first written to an SQL backup in a protected folder below wp-content/uploads/lucidlab-db-cleanup/. You can restore it from the Backups tab. Deleting cannot be undone without that backup. Afterwards every affected table is optimized and the database is measured before and after."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:976
+msgid "I checked the risky findings and want to delete them too."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:978
+msgid "Back up and delete"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1016
+msgid "Information only, never deleted"
+msgstr ""
+
+#. translators: %s: number of examples.
+#: includes/class-lucidlab-dbc-plugin.php:1031
+#, php-format
+msgid "Show %s example"
+msgid_plural "Show %s examples"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1043
+msgid "View"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1046
+msgid "Edit"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1049
+msgid "Inspect"
+msgstr ""
+
+#. translators: %s: number of further records.
+#: includes/class-lucidlab-dbc-plugin.php:1058
+#, php-format
+msgid "… and %s more"
+msgstr ""
+
+#. translators: %s: number of rows.
+#: includes/class-lucidlab-dbc-plugin.php:1076
+#, php-format
+msgid "%s rows"
+msgstr ""
+
+#. translators: %s: size.
+#: includes/class-lucidlab-dbc-plugin.php:1087
+#, php-format
+msgid "%s autoloaded"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1108
+msgid "Restoring puts the deleted rows and tables back with INSERT IGNORE: rows that exist again are left untouched. Backups marked “Changed rows” (made before rows were changed instead of deleted) put the previous values back. Backups contain personal data from your database; delete them when you no longer need them."
+msgstr ""
+
+#. translators: %s: folder path.
+#: includes/class-lucidlab-dbc-plugin.php:1114
+#: includes/class-lucidlab-dbc-plugin.php:1653
+#, php-format
+msgid "Folder: %s"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1116
+msgid "Web access blocked with .htaccess, web.config and random file names. On nginx, add a deny rule for this folder."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1116
+msgid "The folder is created on the first cleanup."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1120
+msgid "No backups yet. A backup is written automatically before every cleanup."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1125
+#: includes/class-lucidlab-dbc-plugin.php:1663
+msgid "Created"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1126
+msgid "Cleaned findings"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1127
+#: includes/class-lucidlab-dbc-plugin.php:1665
+msgid "Contents"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1128
+#: includes/class-lucidlab-dbc-plugin.php:2122
+msgid "Status"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1129
+#: includes/class-lucidlab-dbc-plugin.php:1667
+msgid "Actions"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1141
+msgid "Changed rows"
+msgstr ""
+
+#. translators: %s: number of further findings.
+#: includes/class-lucidlab-dbc-plugin.php:1148
+#: includes/class-lucidlab-dbc-plugin.php:1433
+#, php-format
+msgid "+ %s more"
+msgstr ""
+
+#. translators: 1: number of rows, 2: number of tables, 3: file size.
+#: includes/class-lucidlab-dbc-plugin.php:1156
+#, php-format
+msgid "%1$s rows, %2$s tables · %3$s"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1162
+msgid "Restored"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1164
+msgid "Complete"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1166
+#: includes/class-lucidlab-dbc-plugin.php:1697
+msgid "Incomplete"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1171
+#: includes/class-lucidlab-dbc-plugin.php:1732
+msgid "Restore"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1172
+#: includes/class-lucidlab-dbc-plugin.php:1733
+msgid "Download"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1173
+#: includes/class-lucidlab-dbc-plugin.php:1735
+msgid "Delete"
+msgstr ""
+
+#. translators: %s: number of megabytes.
+#: includes/class-lucidlab-dbc-plugin.php:1196
+#, php-format
+msgid "%s MB"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1219
+msgid "Database summary"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1220
+msgid "Size is data plus indexes as MySQL reports it. Free space (overhead) is allocated but unused space inside the table files; OPTIMIZE TABLE gives it back. Records are counted exactly with COUNT(*); only InnoDB tables with more than 500,000 rows use the estimate from information_schema, marked with ≈."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1223
+msgid "The database has not been measured yet."
+msgstr ""
+
+#. translators: %s: table prefix.
+#: includes/class-lucidlab-dbc-plugin.php:1229
+#, php-format
+msgid "This site (tables %s*)"
+msgstr ""
+
+#. translators: %s: database name.
+#: includes/class-lucidlab-dbc-plugin.php:1231
+#, php-format
+msgid "Whole database “%s”"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1239
+#: includes/class-lucidlab-dbc-plugin.php:1367
+msgid "Size (data + index)"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1240
+#: includes/class-lucidlab-dbc-plugin.php:1368
+msgid "Free space / overhead"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1241
+#: includes/class-lucidlab-dbc-plugin.php:1370
+#: includes/class-lucidlab-dbc-plugin.php:2098
+#: includes/class-lucidlab-dbc-plugin.php:2102
+msgid "Tables"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1242
+#: includes/class-lucidlab-dbc-plugin.php:1371
+msgid "Records"
+msgstr ""
+
+#. translators: %s: list of storage engines with table counts.
+#: includes/class-lucidlab-dbc-plugin.php:1251
+#, php-format
+msgid "Engines: %s."
+msgstr ""
+
+#. translators: %s: number of tables.
+#: includes/class-lucidlab-dbc-plugin.php:1254
+#, php-format
+msgid "Records include the InnoDB estimate for %s large table."
+msgid_plural "Records include InnoDB estimates for %s large tables."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1256
+msgid "All records counted exactly."
+msgstr ""
+
+#. translators: 1: date and time, 2: database server version.
+#: includes/class-lucidlab-dbc-plugin.php:1266
+#, php-format
+msgid "Measured %1$s · %2$s."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1268
+msgid "innodb_file_per_table is off: InnoDB tables share one system file, so free space is counted once and optimizing does not shrink that file."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1274
+msgid "Measure again"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1274
+msgid "Measure now"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1275
+msgid "Optimize all tables…"
+msgstr ""
+
+#. translators: %s: table prefix.
+#: includes/class-lucidlab-dbc-plugin.php:1281
+#, php-format
+msgid "Optimize every table with the prefix %s?"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1284
+msgid "Nothing is deleted. InnoDB tables are rebuilt (recreate + analyze), which needs free disk space about the size of the largest table and can take minutes for large tables; MyISAM and Aria tables are locked while they are optimized. Run it at a quiet moment. The database is measured before and after."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1286
+msgid "Optimize all tables"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1317
+msgid "Last optimization: before and after"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1317
+msgid "Last cleanup: before and after"
+msgstr ""
+
+#. translators: 1: date and time, 2: duration in seconds.
+#: includes/class-lucidlab-dbc-plugin.php:1321
+#, php-format
+msgid "Finished %1$s, took %2$s seconds. “Before” was measured at the start, “after” once deleting and optimizing were done and ANALYZE TABLE had refreshed the statistics."
+msgstr ""
+
+#. translators: %s: percentage.
+#: includes/class-lucidlab-dbc-plugin.php:1329
+#, php-format
+msgid "Saved incl. free space (%s%%)"
+msgstr ""
+
+#. translators: %s: percentage.
+#: includes/class-lucidlab-dbc-plugin.php:1335
+#, php-format
+msgid "Data + index saved (%s%%)"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1338
+msgid "Tables removed"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1339
+msgid "Records removed"
+msgstr ""
+
+#. translators: %s: number of InnoDB tables.
+#: includes/class-lucidlab-dbc-plugin.php:1343
+#, php-format
+msgid "Tables optimized (%s InnoDB recreate + analyze)"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1352
+msgid "Before"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1353
+msgid "After"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1354
+msgid "Difference"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1358
+msgid "This site"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1359
+msgid "Whole database"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1369
+msgid "Total incl. free space"
+msgstr ""
+
+#. translators: 1: number of rows, 2: number of tables.
+#: includes/class-lucidlab-dbc-plugin.php:1380
+#, php-format
+msgid "The cleanup itself backed up and deleted %1$s rows and dropped %2$s tables. The record difference above can be a little different because WordPress, WooCommerce and other plugins keep writing (sessions, scheduled actions, caches) while the cleanup runs."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1385
+msgid "Open the database summary and cleanup log"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1399
+msgid "Cleanup log"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1400
+msgid "Every cleanup and optimization, newest first (the last 50 are kept). Sizes and savings are for this site’s tables."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1403
+msgid "No cleanups yet."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1408
+msgid "Date"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1409
+msgid "What"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1410
+msgid "Removed"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1411
+msgid "Size before → after"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1412
+msgid "Saved"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1425
+msgid "Optimize"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1426
+msgid "All tables of this site"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1428
+msgid "Cleanup"
+msgstr ""
+
+#. translators: 1: number of rows, 2: number of tables.
+#: includes/class-lucidlab-dbc-plugin.php:1442
+#, php-format
+msgid "%1$s rows, %2$s tables"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1469
+msgid "Recreate + analyze"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1470
+msgid "Optimized"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1471
+msgid "Up to date"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1472
+msgid "Skipped"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1473
+msgid "Finished in background"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1474
+msgid "Error"
+msgstr ""
+
+#. translators: 1: number of optimized tables, 2: number of problems.
+#: includes/class-lucidlab-dbc-plugin.php:1481
+#, php-format
+msgid "Details: %1$s tables optimized, %2$s notes"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1487
+#: includes/class-lucidlab-dbc-plugin.php:2117
+msgid "Table"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1488
+#: includes/class-lucidlab-dbc-plugin.php:2118
+#: includes/class-lucidlab-dbc-plugin.php:2502
+msgid "Engine"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1489
+msgid "Result"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1490
+msgid "Before → after"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1491
+msgid "Time"
+msgstr ""
+
+#. translators: %s: seconds.
+#: includes/class-lucidlab-dbc-plugin.php:1504
+#, php-format
+msgid "%s s"
+msgstr ""
+
+#. translators: 1: database name, 2: number of tables, 3: size.
+#: includes/class-lucidlab-dbc-plugin.php:1541
+#, php-format
+msgid "All tables of database “%1$s” (%2$s tables, about %3$s)"
+msgstr ""
+
+#. translators: 1: table prefix, 2: number of tables, 3: size.
+#: includes/class-lucidlab-dbc-plugin.php:1543
+#, php-format
+msgid "Only this site’s tables %1$s* (%2$s tables, about %3$s)"
+msgstr ""
+
+#. translators: %s: backup file name.
+#: includes/class-lucidlab-dbc-plugin.php:1553
+#, php-format
+msgid "A restore of %s is not finished."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1556
+msgid "The live tables have not been replaced yet; the data is being imported into temporary tables. Continue the restore, or cancel it to remove the temporary tables without changing anything."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1566
+msgid "Continue the restore"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1567
+#: includes/class-lucidlab-dbc-plugin.php:2254
+msgid "Cancel the restore"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1576
+msgid "Create a full backup"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1577
+msgid "Writes the structure and data of every table to a gzip-compressed .sql.gz file in the protected backup folder, table by table and 1,000 rows at a time, so large databases do not hit time limits. You can leave the page open and keep working in another tab. The file can also be imported with phpMyAdmin or the mysql client."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1580
+msgid "What to back up"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1586
+msgid "Create full backup"
+msgstr ""
+
+#. translators: %s: number of backups.
+#: includes/class-lucidlab-dbc-plugin.php:1591
+#, php-format
+msgid "The newest %s full backups are kept; older ones are deleted automatically."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1593
+msgid "All full backups are kept."
+msgstr ""
+
+#. translators: 1: table number, 2: number of tables.
+#: includes/class-lucidlab-dbc-plugin.php:1604
+#, php-format
+msgid "A full backup was started but is not finished (table %1$s of %2$s). Continue it, or discard the partial file."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1608
+msgid "Continue"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1609
+msgid "Discard"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1619
+msgid "Last restore"
+msgstr ""
+
+#. translators: 1: date and time, 2: file, 3: tables, 4: replaced tables, 5: new tables, 6: seconds.
+#: includes/class-lucidlab-dbc-plugin.php:1624
+#, php-format
+msgid "%1$s: %2$s restored, %3$s tables (%4$s replaced, %5$s added) in %6$s s."
+msgstr ""
+
+#. translators: %s: number of tables.
+#: includes/class-lucidlab-dbc-plugin.php:1627
+#, php-format
+msgid "%s tables that were not in the backup were removed."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1647
+msgid "Full backups"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1648
+msgid "A restore first imports the backup into temporary tables while the site keeps running, then replaces the live tables in one step. Everything written to the database after the backup (orders, comments, users, settings) is lost. Backups contain personal data; keep the downloads safe."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1654
+msgid "Web access is blocked with .htaccess, web.config, index.php and random file names. On nginx, add a deny rule for this folder."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1658
+msgid "No full backups yet."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1664
+msgid "Type"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1684
+msgid "Uploaded"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1687
+msgid "Manual"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1688
+msgid "Safety (before restore)"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1689
+msgid "Before scheduled cleanup"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1690
+msgid "Before table conversion"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1691
+msgid "Before search & replace"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1692
+msgid "Before index change"
+msgstr ""
+
+#. translators: %s: site URL.
+#: includes/class-lucidlab-dbc-plugin.php:1701
+msgid "Other site URL"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1708
+msgid "SQL dump (contents are checked during the restore)"
+msgstr ""
+
+#. translators: %s: table prefix.
+#: includes/class-lucidlab-dbc-plugin.php:1710
+#, php-format
+msgid "tables %s*"
+msgstr ""
+
+#. translators: %s: table prefix.
+#: includes/class-lucidlab-dbc-plugin.php:1710
+msgid "all tables"
+msgstr ""
+
+#. translators: 1: number of tables, 2: scope.
+#: includes/class-lucidlab-dbc-plugin.php:1716
+#, php-format
+msgid "%1$s tables · %2$s"
+msgstr ""
+
+#. translators: 1: number of tables, 2: number of records, 3: scope.
+#: includes/class-lucidlab-dbc-plugin.php:1719
+#, php-format
+msgid "%1$s tables, %2$s records · %3$s"
+msgstr ""
+
+#. translators: %s: seconds.
+#: includes/class-lucidlab-dbc-plugin.php:1723
+#, php-format
+msgid "Written in %s s"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1750
+msgid "Upload & restore, retention, scheduled backups"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1751
+msgid "Restore an SQL dump you upload (from phpMyAdmin, mysqldump or another site), choose how many full backups are kept, and make a full backup automatically before every scheduled cleanup."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1757
+msgid "Restore the database"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1761
+msgid "The current tables are replaced by the tables in the backup. Everything that was written after the backup (orders, customers, comments, settings) is lost. You may have to log in again afterwards with the user name and password stored in the backup. Large backups need free database space for a temporary copy."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1762
+msgid "First make a full backup of the current database (recommended)"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1763
+msgid "Also remove tables that are not in the backup (tables created after it), so the database matches the backup exactly"
+msgstr ""
+
+#. translators: %s: the word RESTORE.
+#: includes/class-lucidlab-dbc-plugin.php:1768
+#, php-format
+msgid "Type %s to confirm"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1774
+msgid "Restore database"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1790
+msgid "Pro"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1805
+msgid "Get Pro"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1834
+msgid "The Pro add-on is installed: activate its license under Database Cleaner → License."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1835
+msgid "Available in the Lucid Lab Database Cleaner Pro add-on. Everything on the other tabs keeps working without it."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1864
+msgid "Scheduled cleanups, search & replace, the full autoload checker with autoload switches, table conversion, index tools, growth charts and health alerts are available in the Pro add-on."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1865
+msgid "Learn more"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1867
+msgid "Dismiss"
+msgstr ""
+
+#. translators: %s: address the install ping is sent to.
+#: includes/class-lucidlab-dbc-plugin.php:1880
+#, php-format
+msgid "When it is on, this site sends its address (home URL), the plugin version, the plugin name and a random install ID to %s: right away, after each plugin update and once a week. Lucid Lab uses it only to count active installs. Nothing else is sent: no users, e-mail addresses, content, database data or settings. It is off by default and you can turn it off at any time on the Settings tab."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1895
+msgid "Help Lucid Lab count active installs?"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1896
+#: includes/class-lucidlab-dbc-plugin.php:1946
+msgid "Lucid Lab privacy policy"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1900
+msgid "Yes, count this site"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1901
+msgid "No thanks"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1917
+msgid "Scan rules"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1918
+msgid "Completed, canceled and failed scheduled actions (Action Scheduler) are only listed when they are older than this. Pending and running actions are never listed. The new age is used from the next scan."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1922
+msgid "Scheduled actions older than … days"
+msgstr ""
+
+#. translators: 1: smallest number of days, 2: largest number of days.
+#: includes/class-lucidlab-dbc-plugin.php:1927
+#, php-format
+msgid "From %1$s to %2$s days. Default 30, the period Action Scheduler itself keeps finished actions."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1933
+#: includes/class-lucidlab-dbc-plugin.php:1956
+#: includes/class-lucidlab-dbc-plugin.php:2193
+msgid "Save"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1939
+msgid "Install count (optional)"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1943
+msgid "Tell Lucid Lab that this site uses the plugin"
+msgstr ""
+
+#. translators: %s: date and time of the last install ping.
+#: includes/class-lucidlab-dbc-plugin.php:1951
+#, php-format
+msgid "Last sent: %s."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1974
+msgid "Largest autoloaded options"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1975
+msgid "A read-only preview of the 25 largest options that WordPress loads on every request. Settings of removed plugins can be deleted with the findings above."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1978
+msgid "Total autoload size"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1979
+msgid "Autoloaded options"
+msgstr ""
+
+#. translators: %s: size.
+#: includes/class-lucidlab-dbc-plugin.php:1985
+#, php-format
+msgid "The autoloaded options take %s, more than the 800 KB that WordPress recommends. Delete settings of removed plugins with the findings above. The Autoload checker of the Pro add-on can turn autoload off per option."
+msgstr ""
+
+#. translators: %s: size.
+#: includes/class-lucidlab-dbc-plugin.php:1992
+#, php-format
+msgid "The autoloaded options take %s, below the 800 KB that WordPress recommends. Nothing to do."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:1999
+msgid "Option"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2002
+msgid "Share"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2004
+#: includes/class-lucidlab-dbc-plugin.php:2485
+msgid "Autoload"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2011
+#: includes/class-lucidlab-dbc-scanner.php:158
+msgid "Unknown"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2035
+msgid "Open the autoload checker"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2038
+msgid "The full Autoload checker (50 options, autoload switch per option with undo) is part of Pro."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2099
+msgid "MyISAM and Aria tables lock the whole table on every write and are not crash-safe; InnoDB is the default since MySQL 5.5. Tables or columns that are not utf8mb4 cannot store emoji and some languages."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2103
+#: includes/class-lucidlab-dbc-plugin.php:2147
+msgid "Not InnoDB"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2104
+#: includes/class-lucidlab-dbc-plugin.php:2150
+msgid "Not utf8mb4"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2119
+msgid "Collation"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2120
+#: includes/class-lucidlab-dbc-plugin.php:2500
+msgid "Rows"
+msgstr ""
+
+#. translators: 1: number of columns, 2: character sets.
+#: includes/class-lucidlab-dbc-plugin.php:2134
+#, php-format
+msgid "%1$s column in %2$s"
+msgid_plural "%1$s columns in %2$s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2144
+msgid "OK"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2163
+msgid "Convert tables"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2164
+msgid "Convert MyISAM and Aria tables to InnoDB and old character sets to utf8mb4_unicode_520_ci, one table at a time, after a full backup of those tables and with a row count and checksum check."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2177
+msgid "Keep backups"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2178
+msgid "Older cleanup backups are deleted automatically after every cleanup. The backup of the cleanup that just ran is always kept."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2182
+msgid "Keep the last … backups"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2184
+msgid "0 means no limit."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2187
+msgid "Delete backups older than … days"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2189
+msgid "0 means no age limit."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2207
+msgid "Keep the last revisions"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2208
+msgid "Instead of removing all revisions, keep the newest ones of every post and remove the older ones. Autosaves are not touched. The removed revisions are backed up first."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2212
+msgid "Revisions to keep per post"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2218
+msgid "Back up and remove older revisions"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2226
+msgid "Limit new revisions"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2227
+msgid "Set how many revisions WordPress keeps for new edits (wp_revisions_to_keep), without editing wp-config.php."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2253
+msgid "Replace the live tables anyway"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2268
+#: includes/class-lucidlab-dbc-plugin.php:2578
+#: includes/class-lucidlab-dbc-plugin.php:2600
+msgid "You are not allowed to do this."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2271
+msgid "This plugin works on single sites only."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2338
+#: includes/class-lucidlab-dbc-plugin.php:2356
+msgid "The backup could not be deleted."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2389
+msgid "Unknown operation."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2410
+msgid "Unknown category."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2458
+msgid "This post no longer exists."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2470
+#: includes/class-lucidlab-dbc-scanner.php:578
+msgid "Post meta"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2477
+msgid "This option no longer exists."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2484
+msgid "Name"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2493
+msgid "This table no longer exists."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2503
+msgid "Columns"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2508
+msgid "First rows"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-plugin.php:2524
+msgid "Nothing to show."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-restore.php:89
+msgid "The restore state file could not be written."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-restore.php:240
+msgid "Type RESTORE to confirm."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-restore.php:243
+msgid "Another restore is not finished. Continue or cancel it first."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-restore.php:246
+msgid "A backup or cleanup is running. Wait until it has finished."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-restore.php:255
+msgid "This backup is incomplete or was changed after it was written, so it is not restored from the list. If you trust the file, download it and use “Upload a backup” instead."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-restore.php:338
+msgid "No restore is in progress."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-restore.php:399
+msgid "The backup file could not be opened."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-restore.php:403
+msgid "The backup file could not be read."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-restore.php:408
+#: includes/class-lucidlab-dbc-restore.php:425
+msgid "The temporary restore file could not be written. Check the free disk space."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-restore.php:416
+msgid "The backup file is damaged (gzip error)."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-restore.php:450
+msgid "The SQL file could not be opened."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-restore.php:517
+msgid "Too many view definitions; the remaining views were skipped."
+msgstr ""
+
+#. translators: 1: table name, 2: database error.
+#: includes/class-lucidlab-dbc-restore.php:564
+#, php-format
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-restore.php:657
+msgid "The file contains no CREATE TABLE statements, so there is nothing to restore. Data-only dumps are not supported."
+msgstr ""
+
+#. translators: %s: table prefix.
+#: includes/class-lucidlab-dbc-restore.php:663
+#, php-format
+msgid "The backup does not contain the table %soptions of this site. It may come from a site with another table prefix; its tables are restored under their own names and this site keeps using its current tables."
+msgstr ""
+
+#. translators: 1: option name (siteurl or home), 2: URL in the backup, 3: current URL.
+#: includes/class-lucidlab-dbc-restore.php:674
+#, php-format
+msgid "The %1$s in the backup is %2$s, but this site uses %3$s. After the restore the site will use the address from the backup, which can make wp-admin unreachable at this address."
+msgstr ""
+
+#. translators: %s: number of failed statements.
+#: includes/class-lucidlab-dbc-restore.php:680
+#, php-format
+msgid "%s statement failed during the import (see the errors). Tables whose CREATE TABLE failed are not replaced."
+msgid_plural "%s statements failed during the import (see the errors). Tables whose CREATE TABLE failed are not replaced."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: table name.
+#: includes/class-lucidlab-dbc-restore.php:709
+#, php-format
+msgid "Table %s was not imported and is left as it is."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-restore.php:738
+msgid "Nothing to restore: no table was imported."
+msgstr ""
+
+#. translators: %s: database error.
+#: includes/class-lucidlab-dbc-restore.php:760
+#, php-format
+msgid "Swapping the tables failed, so the live database was not changed: %s"
+msgstr ""
+
+#. translators: 1: table name, 2: database error.
+#: includes/class-lucidlab-dbc-restore.php:779
+#, php-format
+msgid "Foreign key on %1$s keeps a temporary name: %2$s"
+msgstr ""
+
+#. translators: %s: database error.
+#: includes/class-lucidlab-dbc-restore.php:786
+#, php-format
+msgid "View: %s"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:43
+msgid "Pages, posts & products"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:44
+msgid "Trashed and long-forgotten drafts of pages, posts and products, and product variations whose product is gone."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:47
+msgid "Newsletters & other post types"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:48
+msgid "Posts of types that no active plugin or theme registers any more, such as old newsletter campaigns. They usually return 404 on the front end."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:51
+msgid "Revisions & auto-drafts"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:52
+msgid "Post revisions, revisions of deleted posts and abandoned auto-drafts."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:55
+msgid "Orphaned & leftover meta"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:56
+msgid "Post, user, term and comment meta whose parent row is gone, and meta keys written by plugins that are no longer active."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:59
+msgid "Terms & taxonomies"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:60
+msgid "Broken term relationships, terms of unregistered taxonomies and tags that nothing uses."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:63
+#: includes/class-lucidlab-dbc-scanner.php:967
+msgid "Comments"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:64
+msgid "Spam, trashed comments and comments or order notes of deleted posts."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:67
+msgid "Options & autoload"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:68
+msgid "Settings left by plugins and themes that are no longer active, and the autoloaded options WordPress loads on every page."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:71
+msgid "Transients & caches"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:72
+msgid "Expired transients and oEmbed caches. WordPress rebuilds them when needed."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:75
+msgid "WooCommerce & Action Scheduler"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:76
+msgid "Expired sessions, order items and lookup rows of deleted orders and products, and finished scheduled actions with their logs."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:79
+msgid "Database tables"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:80
+msgid "Every table with this site’s prefix, mapped to WordPress core or the plugin that created it. Tables of removed plugins and of unknown owners are listed for review."
+msgstr ""
+
+#. translators: %d: number of media URLs in the post content.
+#: includes/class-lucidlab-dbc-scanner.php:229
+#, php-format
+msgid "%d media URL in content"
+msgid_plural "%d media URLs in content"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-lucidlab-dbc-scanner.php:232
+msgid "(no title)"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:307
+msgid "Pages"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:308
+msgid "Posts"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:309
+#: includes/class-lucidlab-dbc-scanner.php:364
+msgid "Products"
+msgstr ""
+
+#. translators: %s: post type label, such as "Pages".
+#: includes/class-lucidlab-dbc-scanner.php:330
+#, php-format
+msgid "%s in the Trash"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:331
+msgid "Already moved to the Trash. Deleting removes them permanently, together with their meta, term links, comments and revisions."
+msgstr ""
+
+#. translators: %s: post type label, such as "Pages".
+#: includes/class-lucidlab-dbc-scanner.php:348
+#, php-format
+msgid "%s: drafts not edited for over a year"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:349
+msgid "Drafts that were never published and have not changed for more than a year. Check them; a draft can still be work in progress."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:365
+msgid "Product variations of deleted products"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:366
+msgid "The parent product no longer exists, so WooCommerce can never show these variations."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:396
+msgid "Nothing registers this post type on admin screens, but its owner is active. It may register the type only on some requests. Leave it unless you are sure."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:399
+msgid "No active plugin or theme registers this post type, so WordPress cannot display these posts: their links return 404."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:403
+msgid "This type stores orders or payments. Keep it if you need the history."
+msgstr ""
+
+#. translators: %d: number of media URLs.
+#: includes/class-lucidlab-dbc-scanner.php:408
+#, php-format
+msgid "The content still links %d media URL, which media scanners count as “in use”."
+msgid_plural "The content still links %d media URLs, which media scanners count as “in use”."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: post type name.
+#: includes/class-lucidlab-dbc-scanner.php:416
+#, php-format
+msgid "Post type “%s”"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:479
+msgid "Newsletters & emails"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:482
+msgid "Theme content"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:485
+msgid "Plugin content"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:520
+#: includes/class-lucidlab-dbc-scanner.php:532
+msgid "Revisions"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:521
+msgid "Revisions of deleted posts"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:522
+msgid "The post these revisions belong to no longer exists."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:533
+msgid "Revisions of existing posts"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:534
+msgid "Earlier versions of pages, posts and products. The current version stays; you lose the ability to roll back."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:544
+msgid "Auto-drafts"
+msgstr ""
+
+#. translators: %d: number of days.
+#: includes/class-lucidlab-dbc-scanner.php:546
+#, php-format
+msgid "Auto-drafts older than %d days"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:547
+msgid "Created automatically when an editor was opened and never saved. WordPress would remove them itself after a week if WP-Cron runs."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:586
+msgid "User meta"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:594
+msgid "Term meta"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:602
+msgid "Comment meta"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:627
+msgid "Orphaned meta"
+msgstr ""
+
+#. translators: %s: meta table label such as "Post meta".
+#: includes/class-lucidlab-dbc-scanner.php:629
+#, php-format
+msgid "%s without a parent"
+msgstr ""
+
+#. translators: 1: meta table name, 2: parent table name.
+#: includes/class-lucidlab-dbc-scanner.php:631
+#, php-format
+msgid "Rows in %1$s whose %2$s row no longer exists."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:632
+msgid "The post, user, term or comment these rows describe was deleted without its meta. Nothing can read them."
+msgstr ""
+
+#. translators: %s: number of rows.
+#: includes/class-lucidlab-dbc-scanner.php:673
+#, php-format
+msgid "%s row"
+msgid_plural "%s rows"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-lucidlab-dbc-scanner.php:678
+msgid "Meta of inactive or removed plugins"
+msgstr ""
+
+#. translators: 1: meta table label, 2: plugin name.
+#: includes/class-lucidlab-dbc-scanner.php:680
+#, php-format
+msgid "%1$s written by %2$s"
+msgstr ""
+
+#. translators: %d: number of distinct meta keys.
+#: includes/class-lucidlab-dbc-scanner.php:682
+#, php-format
+msgid "%d meta key"
+msgid_plural "%d meta keys"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-lucidlab-dbc-scanner.php:683
+msgid "Only the plugin that wrote these keys reads them, and it is not active."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:738
+msgid "Term links to deleted posts"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:739
+msgid "Category, tag or attribute links of posts and products that no longer exist."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:743
+msgid "Term links to deleted terms"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:744
+msgid "Links to a term taxonomy row that no longer exists."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:748
+msgid "Taxonomy rows without a term"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:749
+msgid "Taxonomy rows whose term was deleted."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:753
+msgid "Terms without a taxonomy"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:754
+msgid "Terms that belong to no taxonomy at all, so WordPress never shows them."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:766
+msgid "Broken links"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:792
+msgid "Unregistered taxonomies"
+msgstr ""
+
+#. translators: %s: taxonomy name.
+#: includes/class-lucidlab-dbc-scanner.php:794
+#, php-format
+msgid "Taxonomy “%s”"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:796
+msgid "No active plugin or theme registers this taxonomy, so its terms and links are never used."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:826
+msgid "Unused terms"
+msgstr ""
+
+#. translators: %s: taxonomy label such as "Tags".
+#: includes/class-lucidlab-dbc-scanner.php:828
+#, php-format
+msgid "%s without any posts or products"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:830
+msgid "Empty categories can be intentional (menus, future products). Default categories, parent categories and menu items are never included."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:831
+msgid "No post or product uses these terms. Their archive URLs will return 404 after deletion."
+msgstr ""
+
+#. translators: %s: number of term links.
+#: includes/class-lucidlab-dbc-scanner.php:876
+#, php-format
+msgid "%s link to posts"
+msgid_plural "%s links to posts"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-lucidlab-dbc-scanner.php:929
+msgid "Spam comments"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:930
+msgid "Marked as spam. WordPress keeps them only so you can review false positives."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:934
+msgid "Trashed comments"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:935
+msgid "Comments and reviews already moved to the Trash."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:939
+msgid "Pingbacks and trackbacks"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:940
+msgid "Automatic notifications from other sites that link to a post. Most sites do not show them; check first if your theme lists them under posts."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:944
+msgid "Comments of deleted posts"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:945
+msgid "Comments, reviews and order notes whose post, product or order no longer exists."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1012
+#: includes/class-lucidlab-dbc-scanner.php:1060
+msgid "Theme settings"
+msgstr ""
+
+#. translators: %s: theme folder name.
+#: includes/class-lucidlab-dbc-scanner.php:1014
+#, php-format
+msgid "Customizer settings of theme “%s”"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1016
+msgid "Settings of an installed theme that is not active. You lose them if you switch back to this theme."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1016
+msgid "Settings of a theme that is no longer installed."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1060
+msgid "Plugin settings"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: includes/class-lucidlab-dbc-scanner.php:1062
+#, php-format
+msgid "Settings of %s"
+msgstr ""
+
+#. translators: 1: number of options, 2: autoloaded size.
+#: includes/class-lucidlab-dbc-scanner.php:1064
+#, php-format
+msgid "%1$d option, %2$s autoloaded on every page view"
+msgid_plural "%1$d options, %2$s autoloaded on every page view"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1065
+msgid "The plugin is installed but not active. Its settings are lost if you delete them and activate it again later."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1065
+msgid "The plugin that saved these options is no longer installed; nothing reads them."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1084
+msgid "Migration leftovers"
+msgstr ""
+
+#. translators: %s: table prefix.
+#: includes/class-lucidlab-dbc-scanner.php:1086
+#, php-format
+msgid "Options whose name starts with the table prefix “%s”"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1087
+msgid "Usually created when a site was moved and a migration tool renamed “wp_…” option names as if they were tables. Plugins look for the original names, so these copies are normally unused. Check the list before deleting."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1097
+msgid "Site migration"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1120
+msgid "Autoload report"
+msgstr ""
+
+#. translators: 1: total size, 2: number of options.
+#: includes/class-lucidlab-dbc-scanner.php:1122
+#, php-format
+msgid "Autoloaded options: %1$s in %2$s options"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1123
+msgid "Above 800 KB: WordPress Site Health warns about this and every page view gets slower."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1123
+msgid "Below the 800 KB that Site Health warns about."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1124
+msgid "Loaded into memory on every request. This list shows the largest ones; remove leftovers above to make it smaller."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1186
+msgid "Transients"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1187
+msgid "Expired transients"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1188
+msgid "Temporary cache entries past their expiry date. WordPress would recreate them when needed."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1205
+#: includes/class-lucidlab-dbc-scanner.php:1221
+msgid "oEmbed caches"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1206
+msgid "oEmbed cache in post meta"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1207
+msgid "Cached HTML of embedded videos and posts. WordPress fetches it again the next time the post is shown."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1222
+msgid "oEmbed cache posts"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1223
+msgid "Cached embeds used by the block editor. WordPress recreates them on demand."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1243
+msgid "Sessions"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1244
+msgid "Expired customer sessions"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1245
+msgid "Shopping-cart sessions past their expiry time. WooCommerce removes them itself when WP-Cron runs."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1251
+#: includes/class-lucidlab-dbc-scanner.php:1260
+msgid "Orders"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1252
+msgid "Order items of deleted orders"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1253
+msgid "Line items whose order exists neither as a post nor in the HPOS order table."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1261
+msgid "Order item meta without an order item"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1262
+msgid "Meta rows of order items that no longer exist."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1268
+#: includes/class-lucidlab-dbc-scanner.php:1276
+msgid "Lookup tables"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1269
+msgid "Product lookup rows of deleted products"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1270
+msgid "Search and filter index rows of products that no longer exist."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1277
+msgid "Attribute lookup rows of deleted products"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1278
+msgid "Layered-navigation index rows of products that no longer exist."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1284
+#: includes/class-lucidlab-dbc-scanner.php:1292
+msgid "Analytics"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1285
+msgid "Analytics rows of deleted orders"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1286
+msgid "WooCommerce Analytics statistics of orders that no longer exist. Removing them changes historic reports."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1293
+msgid "Analytics product rows of deleted orders"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1294
+msgid "Per-product analytics rows of orders that no longer exist. Removing them changes historic reports."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1300
+#: includes/class-lucidlab-dbc-scanner.php:1310
+#: includes/class-lucidlab-dbc-scanner.php:1320
+#: includes/class-lucidlab-dbc-scanner.php:1330
+#: includes/class-lucidlab-dbc-scanner.php:1338
+msgid "Scheduled actions"
+msgstr ""
+
+#. translators: %s: number of days.
+#: includes/class-lucidlab-dbc-scanner.php:1302
+#, php-format
+msgid "Completed scheduled actions (older than %s days)"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1303
+msgid "Background tasks that already ran. Action Scheduler keeps them only as history and normally purges them after 30 days. The age can be changed on the Settings tab."
+msgstr ""
+
+#. translators: %s: number of days.
+#: includes/class-lucidlab-dbc-scanner.php:1312
+#, php-format
+msgid "Canceled scheduled actions (older than %s days)"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1313
+msgid "Background tasks that were canceled and will never run."
+msgstr ""
+
+#. translators: %s: number of days.
+#: includes/class-lucidlab-dbc-scanner.php:1322
+#, php-format
+msgid "Failed scheduled actions (older than %s days)"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1323
+msgid "Background tasks that failed. Check Tools › Scheduled Actions first if you want to know why."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1331
+msgid "Scheduled-action logs without an action"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1332
+msgid "Log lines of actions that were already deleted."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1339
+msgid "Scheduled-action claims without an action"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1340
+msgid "Claims that no scheduled action refers to any more, created more than an hour ago. A queue runner claims actions while it works and releases the claim afterwards; claims of runners that stopped halfway stay behind."
+msgstr ""
+
+#. translators: 1: number of rows, 2: table name.
+#: includes/class-lucidlab-dbc-scanner.php:1383
+#, php-format
+msgid "+ %1$s related rows in %2$s"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1384
+msgid "Deleted together with the main rows"
+msgstr ""
+
+#. translators: %s: number of actions.
+#: includes/class-lucidlab-dbc-scanner.php:1394
+#, php-format
+msgid "%s action"
+msgid_plural "%s actions"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1438
+msgid "Leftover multisite tables"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1438
+msgid "Network (multisite) tables on a single site. They are often created by hosting installers and are not used here. Keep them if this database was ever part of a network you still need."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1447
+msgid "Unknown tables"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1447
+msgid "No known plugin, theme or WordPress itself uses this table. Inspect its contents before you delete it."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1452
+msgid "Belongs to a plugin that is installed but not active. The plugin loses this data if you activate it again."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1455
+msgid "Belongs to a plugin that is no longer installed; nothing reads this table."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1459
+msgid "It still holds business records such as payments, orders or customer data; keep it if you may need them for your administration."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1463
+msgid "Ownership is shared or unclear. Inspect its contents before you delete it."
+msgstr ""
+
+#. translators: %s: plugin or theme name.
+#: includes/class-lucidlab-dbc-scanner.php:1467
+#, php-format
+msgid "This is data of %s (Lucid Lab). Lucid Lab plugins keep their data when they are deactivated or removed, so it comes back when you install the plugin again. Only delete it if you are sure you no longer need it."
+msgstr ""
+
+#. translators: 1: plugin name, 2: text found in its code.
+#: includes/class-lucidlab-dbc-scanner.php:1470
+#, php-format
+msgid "Recognised because the code of %1$s uses the table name “%2$s”."
+msgstr ""
+
+#. translators: 1: number of rows, 2: size.
+#: includes/class-lucidlab-dbc-scanner.php:1483
+#, php-format
+msgid "%1$s rows · %2$s"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1492
+msgid "Protected tables"
+msgstr ""
+
+#. translators: %s: owner name.
+#: includes/class-lucidlab-dbc-scanner.php:1494
+#, php-format
+msgid "Tables of %s"
+msgstr ""
+
+#. translators: %s: total size.
+#: includes/class-lucidlab-dbc-scanner.php:1496
+#, php-format
+msgid "In use, %s in total"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1497
+msgid "Used by WordPress or an active plugin or theme. Never offered for deletion."
+msgstr ""
+
+#. translators: %s: table name.
+#: includes/class-lucidlab-dbc-scanner.php:1525
+#, php-format
+msgid "Table %s"
+msgstr ""
+
+#. translators: 1: number of rows, 2: storage engine.
+#: includes/class-lucidlab-dbc-scanner.php:1527
+#, php-format
+msgid "%1$s rows · engine %2$s"
+msgstr ""
+
+#. translators: 1: data size, 2: index size.
+#: includes/class-lucidlab-dbc-scanner.php:1537
+#, php-format
+msgid "Data %1$s · index %2$s"
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1802
+msgid "This finding is information only."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1810
+msgid "This post type is registered again; skipped."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1819
+msgid "This table is protected or already gone; skipped."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1842
+msgid "All options of this finding are in use now; skipped."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1867
+msgid "All meta keys of this finding are in use now; skipped."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1875
+msgid "This taxonomy is registered again; skipped."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-scanner.php:1882
+msgid "Unknown finding; skipped."
+msgstr ""
+
+#: includes/class-lucidlab-dbc-sql-reader.php:295
+msgid "A statement in the file is larger than 256 MB."
+msgstr ""

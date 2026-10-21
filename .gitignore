@@ -1,0 +1,41 @@
+# Dependencies
+vendor/
+node_modules/
+
+# Release artifacts
+*.zip
+*.sig
+dbc-rel-stage/
+
+# Keys and secrets
+*.pem
+*.key
+*.p12
+*.pfx
+.env
+.env.*
+id_rsa
+id_rsa.pub
+*.secret
+
+# OS junk
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor junk
+*~
+*.swp
+*.swo
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+*.komodoproject
