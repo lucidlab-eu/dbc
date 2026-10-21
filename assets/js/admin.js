@@ -84,11 +84,35 @@
 		}
 	}
 
-	// Links styled as buttons: busy while the next page or the download starts.
+	/**
+	 * Whether a link opens in a new tab or window, or leaves this site (such as the "Get Pro"
+	 * links to lucidlab.eu). The current page stays, so such links never get the busy state.
+	 *
+	 * @param {HTMLAnchorElement} link Link.
+	 * @return {boolean} True for new-tab and external links.
+	 */
+	function opensElsewhere( link ) {
+		const target = ( link.getAttribute( 'target' ) || '' ).toLowerCase();
+		if ( target !== '' && target !== '_self' ) {
+			return true;
+		}
+		if ( link.classList.contains( 'lucidlab-dbc-pro-link' ) ) {
+			return true;
+		}
+		return (
+			!! link.host &&
+			( link.host !== window.location.host ||
+				link.protocol !== window.location.protocol )
+		);
+	}
+
+	// Links styled as buttons: busy while the next page or the download starts. Links that open
+	// in a new tab or go to another site stay normal buttons (no spinner, never disabled).
 	root.addEventListener( 'click', function ( event ) {
 		const link = event.target.closest( 'a.lldbc-btn' );
 		if (
 			! link ||
+			opensElsewhere( link ) ||
 			event.defaultPrevented ||
 			event.button !== 0 ||
 			event.metaKey ||

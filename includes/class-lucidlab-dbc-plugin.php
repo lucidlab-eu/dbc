@@ -64,6 +64,7 @@ final class LucidLab_DBC_Plugin {
 	 */
 	private function __construct() {
 		add_action( 'load-toplevel_page_' . self::SLUG, array( __CLASS__, 'migrate_autoload' ) );
+		add_action( 'load-toplevel_page_' . self::SLUG, array( __CLASS__, 'maybe_dismiss_pro_inactive' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_assets' ) );
 		add_action( 'wp_ajax_lucidlab_dbc', array( $this, 'ajax' ) );
 		add_action( 'admin_post_lucidlab_dbc_download', array( $this, 'download' ) );
@@ -613,6 +614,7 @@ final class LucidLab_DBC_Plugin {
 					</nav>
 				</aside>
 				<div class="lucidlab-dbc-admin-content">
+					<div id="lucidlab-dbc-top-notices" class="lucidlab-dbc-top-notices" data-testid="top-notices"><?php self::render_pro_inactive_notice(); ?></div>
 					<div class="lucidlab-dbc-panel lucidlab-dbc-panel-cards" data-dbc-panel="<?php echo esc_attr( $tab ); ?>">
 						<?php
 						$this->render_hero( $tab, $tabs[ $tab ] );
@@ -1849,6 +1851,91 @@ final class LucidLab_DBC_Plugin {
 	private function render_locked_tab( string $tab ): void {
 		$feature = self::pro_features()[ $tab ];
 		self::pro_card( $feature['label'], $feature['text'], $feature['points'] );
+	}
+
+	/**
+	 * Whether the Pro add-on files are present (active or not).
+	 *
+	 * @return bool
+	 */
+	private static function pro_plugin_files_installed(): bool {
+		return is_readable( WP_PLUGIN_DIR . '/' . lucidlab_dbc_pro_plugin_basename() );
+	}
+
+	/**
+	 * Whether the Pro add-on plugin is activated in WordPress.
+	 *
+	 * @return bool
+	 */
+	private static function pro_plugin_active(): bool {
+		if ( defined( 'LUCIDLAB_DBCP_VERSION' ) ) {
+			return true;
+		}
+		if ( ! function_exists( 'is_plugin_active' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		}
+		return is_plugin_active( lucidlab_dbc_pro_plugin_basename() );
+	}
+
+	/**
+	 * Installed-but-inactive Pro notice: only for users who can activate plugins, hidden while
+	 * dismissed for this user.
+	 *
+	 * @return bool
+	 */
+	private static function should_show_pro_inactive_notice(): bool {
+		if ( ! current_user_can( 'activate_plugins' ) || self::pro_plugin_active() || ! self::pro_plugin_files_installed() ) {
+			return false;
+		}
+		$user_id = get_current_user_id();
+		return $user_id > 0 && ! get_user_meta( $user_id, 'lucidlab_dbc_hide_pro_inactive_notice', true );
+	}
+
+	/**
+	 * "Hide this message" of the Pro inactive notice: store the per-user dismissal and go back to
+	 * the same screen without the parameter. Runs on load-{page}, before any output.
+	 */
+	public static function maybe_dismiss_pro_inactive(): void {
+		if ( ! isset( $_GET['lucidlab_dbc_dismiss_pro_inactive'] ) ) {
+			return;
+		}
+		check_admin_referer( 'lucidlab_dbc_dismiss_pro_inactive' );
+		$user_id = get_current_user_id();
+		if ( $user_id && current_user_can( 'activate_plugins' ) ) {
+			update_user_meta( $user_id, 'lucidlab_dbc_hide_pro_inactive_notice', 1 );
+		}
+		wp_safe_redirect( remove_query_arg( array( 'lucidlab_dbc_dismiss_pro_inactive', '_wpnonce' ) ) );
+		exit;
+	}
+
+	/**
+	 * Soft yellow card above the hero when Pro is installed but not activated (as in Media &
+	 * Products Cleanup).
+	 */
+	private static function render_pro_inactive_notice(): void {
+		if ( ! self::should_show_pro_inactive_notice() ) {
+			return;
+		}
+		$basename = lucidlab_dbc_pro_plugin_basename();
+		$activate = wp_nonce_url(
+			admin_url( 'plugins.php?action=activate&plugin=' . rawurlencode( $basename ) . '&plugin_status=all' ),
+			'activate-plugin_' . $basename
+		);
+		$dismiss  = wp_nonce_url(
+			add_query_arg( 'lucidlab_dbc_dismiss_pro_inactive', '1' ),
+			'lucidlab_dbc_dismiss_pro_inactive'
+		);
+		?>
+		<section class="lucidlab-dbc-card lucidlab-dbc-card--pro-inactive" id="lucidlab-dbc-pro-inactive-notice" data-testid="pro-inactive-notice" role="status">
+			<div class="lucidlab-dbc-pro-inactive">
+				<p><?php esc_html_e( 'Database Cleaner Pro is installed but not activated. Activate it to unlock Pro tools on this site.', 'lucidlab-db-cleanup' ); ?></p>
+				<p class="lucidlab-dbc-pro-inactive-actions">
+					<a class="button lldbc-btn button-primary" href="<?php echo esc_url( $activate ); ?>" data-testid="activate-pro"><?php esc_html_e( 'Activate Pro', 'lucidlab-db-cleanup' ); ?></a>
+					<a class="lucidlab-dbc-pro-inactive-dismiss" href="<?php echo esc_url( $dismiss ); ?>" data-testid="dismiss-pro-inactive"><?php esc_html_e( 'Hide this message', 'lucidlab-db-cleanup' ); ?></a>
+				</p>
+			</div>
+		</section>
+		<?php
 	}
 
 	/**

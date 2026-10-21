@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Lucid Lab Database Cleaner
  * Description:       Read-only scan of the whole database for unused, orphaned and leftover records and tables, grouped by category. Delete only what you select, after an automatic SQL backup that you can restore. Complete database backup and restore, autoload checker and table engine report.
- * Version:           1.5.2
+ * Version:           1.5.3
  * Requires at least: 6.4
  * Requires PHP:      8.1
  * Author:            Lucid Lab
@@ -26,7 +26,7 @@ if ( defined( 'LUCIDLAB_DBC_VERSION' ) ) {
 	return;
 }
 
-define( 'LUCIDLAB_DBC_VERSION', '1.5.2' );
+define( 'LUCIDLAB_DBC_VERSION', '1.5.3' );
 define( 'LUCIDLAB_DBC_FILE', __FILE__ );
 define( 'LUCIDLAB_DBC_DIR', plugin_dir_path( __FILE__ ) );
 define( 'LUCIDLAB_DBC_URL', plugin_dir_url( __FILE__ ) );
@@ -80,6 +80,7 @@ function lucidlab_dbc_boot(): void {
 	add_action( 'admin_menu', 'lucidlab_dbc_register_menu' );
 	add_filter( 'plugin_action_links_' . plugin_basename( LUCIDLAB_DBC_FILE ), 'lucidlab_dbc_action_links' );
 	add_filter( 'plugin_row_meta', 'lucidlab_dbc_row_meta', 10, 2 );
+	add_action( 'activated_plugin', 'lucidlab_dbc_on_pro_plugin_activated' );
 	// Optional install ping: only does something after an administrator opted in.
 	add_action( 'admin_init', array( 'LucidLab_DBC_Site_Ping', 'admin_init' ) );
 	// Places the menu below the other Lucid Lab menus (menu_order + a final pass before output).
@@ -112,7 +113,7 @@ function lucidlab_dbc_is_own_request(): bool {
  */
 function lucidlab_dbc_register_menu(): void {
 	add_menu_page(
-		__( 'Lucid Lab Database Cleaner', 'lucidlab-db-cleanup' ),
+		__( 'Database Cleaner', 'lucidlab-db-cleanup' ),
 		__( 'Database Cleaner', 'lucidlab-db-cleanup' ),
 		'manage_options',
 		LUCIDLAB_DBC_SLUG,
@@ -239,6 +240,31 @@ function lucidlab_dbc_is_pro(): bool {
  */
 function lucidlab_dbc_pro_installed(): bool {
 	return defined( 'LUCIDLAB_DBCP_VERSION' );
+}
+
+/**
+ * Plugin basename of the Pro add-on under wp-content/plugins.
+ *
+ * @return string
+ */
+function lucidlab_dbc_pro_plugin_basename(): string {
+	return 'lucidlab-db-cleanup-pro/lucidlab-db-cleanup-pro.php';
+}
+
+/**
+ * Clear the "Pro installed but not activated" dismissal when Pro is activated, so the notice can
+ * return if Pro is later deactivated again.
+ *
+ * @param string $plugin Plugin basename that was activated.
+ */
+function lucidlab_dbc_on_pro_plugin_activated( string $plugin ): void {
+	if ( lucidlab_dbc_pro_plugin_basename() !== $plugin ) {
+		return;
+	}
+	$user_id = get_current_user_id();
+	if ( $user_id ) {
+		delete_user_meta( $user_id, 'lucidlab_dbc_hide_pro_inactive_notice' );
+	}
 }
 
 /**

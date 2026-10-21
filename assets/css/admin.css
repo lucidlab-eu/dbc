@@ -1285,6 +1285,69 @@
 	flex: none;
 }
 
+/* Pro installed but not activated: soft yellow card above the hero (as in Media & Products Cleanup). */
+.lucidlab-dbc-wrap .lucidlab-dbc-top-notices {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin: 0 0 12px;
+	padding: 0;
+	min-width: 0;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-top-notices:empty {
+	display: none;
+	margin: 0;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-card--pro-inactive {
+	flex: 0 0 auto;
+	gap: 0;
+	padding: 18px;
+	margin: 0;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-pro-inactive {
+	display: block;
+	position: relative;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 13px 18px;
+	border: 1px solid #f0ddb0;
+	border-radius: 12px;
+	background: #fff8e5;
+	color: #6b4e00;
+	box-shadow: none;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-pro-inactive p {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.55;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-pro-inactive .lucidlab-dbc-pro-inactive-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 12px 16px;
+	margin: 12px 0 0;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-pro-inactive .lucidlab-dbc-pro-inactive-dismiss {
+	color: #6b4e00;
+	font-size: 13px;
+	font-weight: 600;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.lucidlab-dbc-wrap .lucidlab-dbc-pro-inactive .lucidlab-dbc-pro-inactive-dismiss:hover,
+.lucidlab-dbc-wrap .lucidlab-dbc-pro-inactive .lucidlab-dbc-pro-inactive-dismiss:focus {
+	color: #8a5b00;
+}
+
 /* Install ping notice and documentation link */
 .lucidlab-dbc-wrap .lucidlab-dbc-ping-notice {
 	display: flex;
